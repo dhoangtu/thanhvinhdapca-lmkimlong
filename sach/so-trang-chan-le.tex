@@ -1,0 +1,29 @@
+\documentclass[twoside]{article}
+\usepackage[a5paper,left=0.6cm,right=0.6cm,top=1.8cm,bottom=0.6cm]{geometry}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\usepackage{ifthen,changepage}
+\usepackage{pgffor}
+\fancyhf{}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\newcounter{pdfpages}
+\newcommand*{\getpdfpages}[1]{
+  \begingroup
+    \sbox0{
+      \includegraphics{#1}
+      \setcounter{pdfpages}{\pdflastximagepages}
+    }
+  \endgroup
+}
+
+\begin{document}
+  \getpdfpages{nhac.pdf}
+  \foreach \x in {1,...,\value{pdfpages}} {
+  	\checkoddpage
+    \ifthenelse{\boolean{oddpage}}
+      {\lhead[]{} \rhead{\rmfamily\bfseries\fontsize{11pt}{11pt}\selectfont\thepage} \includepdf[pagecommand={\thispagestyle{fancy}},pages=\thepage,scale=0.9,offset=0.2cm 0cm]{nhac.pdf}}
+      {\lhead{\rmfamily\bfseries\fontsize{11pt}{11pt}\selectfont\thepage} \rhead[]{} \includepdf[pagecommand={\thispagestyle{fancy}},pages=\thepage,scale=0.9,offset=0.2cm 0cm]{nhac.pdf}}
+  }
+\end{document}
