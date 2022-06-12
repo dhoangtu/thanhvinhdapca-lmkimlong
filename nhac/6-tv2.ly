@@ -3,7 +3,7 @@
 \include "english.ly"
 
 \header {
-  title = "Thánh Vịnh 1"
+  title = "Thánh Vịnh 2"
   composer = "Lm. Kim Long"
   tagline = ##f
 }
@@ -321,33 +321,26 @@ loiPhanNam = \lyricmode {
 
 \markup {
   \vspace #1
-  \fill-line {
+  %\fill-line {
     \column {
       \left-align {
         \line { \bold \small "Sử dụng:" }
-        \line { \small "-t6 /2MV: cả 3 câu + Đ.1" }
-        \line { \small "-Cn C /6TN: cả 3 câu + Đ.2" }
-        \line { \small "-t5 l /7TN: cả 3 câu + " }
       }
     }
     \column {
       \left-align {
-        \line { \small "-t5 l /27TN: cả 3 câu + Đ.2" }
-        \line { \small "-t4 c /28TN: cả 3 câu + Đ.1" }
-        \line { \small "-t5 l /29TN: cả 3 câu + Đ.2" }
-        \line { \small "-t2 c /30TN: cả 3 câu + Đ.4" }
+        \line { \small "-ngày 7/1: câu 5, 7 + Đ.1" }
+        \line { \small "-t2 /2PS: câu 1, 2, 3 + Đ.2" }
+        \line { \small "-Cn B /3PS: câu 8, 9, 10, 11 + Đ.3" }
       }
     }
     \column {
       \left-align {
-        \line { \small "-t2 c /33TN: cả 3 câu + Đ.3" }
-        \line { \small "-t5 sau lễ Tro: cả 3 câu + Đ2" }
-        \line { \small "-t5 /2MC: cả 3 câu + Đ.2" }
-        \line { \small "-lễ T.Nam Nữ: 3 câu + Đ.2" }
-        \line { \small "-lễ tôn ĐVPhụ: 3 câu + Đ.2" }
+        \line { \small "-t6 /4PS: câu 4, 6, 7 + Đ.4" }
+        \line { \small "Cầu khi bị bách hại: 1, 2, 7 + Đ" }
       }
     }
-  }
+  %}
 }
 
 \score {
