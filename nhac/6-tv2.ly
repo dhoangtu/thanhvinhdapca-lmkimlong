@@ -106,148 +106,125 @@ stanzaReminderOn = \undo \stanzaReminderOff
 
 % Nhạc
 nhacPhanMot = \relative c'' {
-  \key c \major
+  \key f \major
   \time 2/4
-  \partial 4 c8. a16 |
-  g4. f8 |
-  f4 \tuplet 3/2 { f8 e f } |
-  g4 \tuplet 3/2 { f8 f g } |
-  a4 r8 a16 c |
-  b8 e, f d |
-  g4.
-  <<
-    {
-      \voiceOne
-      g16
-    }
-    \new Voice = "splitpart" {
-      \voiceTwo
-      \once \override NoteColumn.force-hshift = #2.5
-      \tweak font-size #-2
-      \parenthesize
-      a16
-    }
-  >>
-  \oneVoice
-  \once \stemUp d, |
-  f8 g e d |
-  c4 \bar "||"
-  
-  \partial 4 r8 c |
-  g'4 \tuplet 3/2 { fs8 fs g } | \break
-  a4 \tuplet 3/2 { a8 g a } |
-  c4 r8 b16 c |
-  d8 e a, af |
-  g4 \bar "||"
+  a8 a a bf16 (a) |
+  g4. g8 |
+  a a f g16 (f) |
+  c2 ~ |
+  c8 c' d g, |
+  bf8. bf16 bf8 c |
+  f,4 r8 a |
+  a a r d, |
+  g8. g16 f8 f ~ |
+  f d c4 \bar "||"
+  r8 g'4 e8 |
+  f4 r8 a |
+  f8. f16 bf8 g |
+  c4. a16 (g) |
+  d8 d c g' |
+  f2 ~ |
+  f4 \bar "||"
 }
 
-nhacPhanHai = \relative c' {
-  \key c \major
+nhacPhanHai = \relative c'' {
+  \key f \major
   \time 2/4
-  \partial 4 c4 |
+  \partial 4
   <<
     {
-      g'2 |
-      e8 e f f |
-      d4. a'8 |
-      a (b) a g |
-      c2 ~ |
-      c4 \bar "|."
+      c4 |
+      d8. bf16 bf8 bf |
+      bf4 g8 c |
     }
     {
-      b,2 |
-      c8 c d c |
-      b4. c8 |
-      f (d) f f |
-      e2 ~ |
-      e4
+      a4 |
+      bf8. g16 g8 g |
+      g4 e8 e |
     }
   >>
+  f2 ~ |
+  f4 r \bar "|."
 }
 
 nhacPhanBa = \relative c'' {
-  \key c \major
+  \key f \major
   \time 2/4
-  \partial 4
   <<
     {
-      g4 |
-      e2 |
-      d8 d d a' |
-      g4. a8 |
-      c2 ~ |
-      c4 \bar "|."
+      c8 a bf (a)
     }
     {
-      d,4 |
-      c2 |
-      b8 b b f' |
-      e4. d8 |
-      e2 ~ |
-      e4
-    }
-  >>
-}
-
-nhacPhanBon = \relative c'' {
-  \key c \major
-  \time 2/4
-  \partial 4
-  <<
-    {
-      g4 |
-      a8 f e a |
-      d,4 a'8 b |
-      a4. g8 |
-      c2 ~ |
-      c4 \bar "|."
-    }
-    {
-      e,4 |
-      f8 d c c |
-      b4 c8 g' |
-      f4. f8 |
-      e2 ~ |
-      e4
-    }
-  >>
-}
-
-nhacPhanNam = \relative c'' {
-  \key c \major
-  \time 2/4
-  \partial 4
-  <<
-    {
-      g4 |
-      g2 |
-      a8 a a g |
-      c2 |
-      b8 b c c |
-      a4.
-    }
-    {
-      e4 |
-      e2 |
-      f8 f f f |
-      e2 |
-      g8 g a g |
-      fs4.
+      a8 f g (f)
     }
   >>
   <<
     {
       \voiceOne
-      a16 (b)
+      g2
     }
     \new Voice = "splitpart" {
       \voiceTwo
-      fs8
+      e4. (d8)
     }
   >>
   \oneVoice
-  g2 ~ |
-  g4 \bar "|."
+  <<
+    {
+      g8. c,16 d8 e |
+      f2 \bar "|."
+    }
+    {
+      c8. bf16 bf8 c |
+      a2
+    }
+  >>
+}
+
+nhacPhanBon = \relative c' {
+  \key f \major
+  \time 2/4
+  \partial 4 f4 |
+  <<
+    {
+      c'4. a8 |
+      bf bf a4 |
+      g2 ~ |
+      g8 e c g' |
+      f2 ~ |
+      f4 r \bar "|."
+    }
+    {
+      e4. f8 |
+      g g f4 |
+      c2 ~ |
+      c8 c bf bf |
+      a2 ~ |
+      a4 r
+    }
+  >>
+}
+
+nhacPhanNam = \relative c' {
+  \key f \major
+  \time 2/4
+  f4 e8 f |
+  <<
+    {
+      g4 r8 a |
+      a4. a8 |
+      bf4 g8 e |
+      f2 ~ |
+      f4 r \bar "|."
+    }
+    {
+      e4 r8 f |
+      f4. f8 |
+      g4 bf,8 c |
+      a2 ~ |
+      a4 r
+    }
+  >>
 }
 
 % Lời
@@ -255,52 +232,128 @@ loiPhanMot = \lyricmode {
   <<
     {
       \set stanza = "1."
-      Phúc thay ai không nghe theo lời khuyên lơn của bọn gian ác,
-      không đứng trên đường lũ tội nhân,
-      không ngồi chung với quân tham
-	    \tweak extra-offset #'(4 . 0)
-      \markup { "tàn." \italic "(tiếp)" }
-      Họ luôn đặt niềm vui thú nơi lề luật Chúa
-      và suy đi gẫm lại đêm ngày.
+      Sao chư dân náo động, muôn nước tính chuyện hão huyền,
+      Vua chúa trần gian liên minh dấy loạn,
+      chống đối Chúa và chống Đức Ki -- tô của Ngài.
+      Chúng bảo nhau:
+      xích xiềng họ ta bẻ gẫy,
+      gông cùm họ nào quăng đi.
+	    \tweak extra-offset #'(2 . 0)
+      \markup { "đạt." \bold "Đ." }
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "2."
       \override Lyrics.LyricText.font-shape = #'italic
-	    Các chính nhân như cây ươm trồng bên suối
-	    tùy mùa sinh trái,
-	    Xanh tốt luôn chẳng có tàn phai,
-	    công việc họ những luôn thịnh
+	    Nơi cao sang cửu trùng, Thiên Chúa tức cười chê nhạo.
+	    Đây Chúa bừng lên trong cơn nghĩa nộ,
+	    quát mắng chúng, làm chúng khiếp run lên kinh hoàng.
+	    Đó vị Vua, chính là người Ta sủng ái
+	    sẽ ngự trị ở Si -- on.
 	    \tweak extra-offset #'(2 . 0)
       \markup { "đạt." \bold "Đ." }
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "3."
-	    Lũ ác nhân tung bay như là tro trấu,
-	    vật vờ theo gió theo lối đi dẫn tới diệt vong.
-	    \markup { \italic \underline "Lối" }
-	    hiền nhân Chúa luôn canh
+	    Đây Tân vương tiếp lời: Tôi xướng sắc phong Chúa truyền:
+	    Đây chính là Con, nay Cha sinh hạ,
+	    xin Cha ban trọn các quốc gia nên sản nghiệp.
+	    Hãy thị oai, hãy dùng trượng sắt
+	    đập chúng nát tựa mảnh sành đi Con.
 	    \tweak extra-offset #'(2 . 0)
-      \markup { "phòng." \bold "Đ." }
+      \markup { "đạt." \bold "Đ." }
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "4."
+      \override Lyrics.LyricText.font-shape = #'italic
+	    Quân vương Ta tuyển chọn, từ Si -- on Người thống trị
+	    Rao sắc chỉ phong vương Thiên Chúa truyền:
+	    Đây Con Cha, thực chính bữa nay Cha sinh
+	    \tweak extra-offset #'(2 . 0)
+      \markup { "hạ." \bold "Đ." }
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "5."
+	    Đây Tân vương tiếp lời: Tôi xướng sắc phong Chúa truyền:
+	    Đây chính là Con, nay Cha sinh hạ,
+	    xin Cha ban trọn các quốc gia nên sản
+	    \tweak extra-offset #'(2 . 0)
+      \markup { "nghiệp." \bold "Đ." }
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "6."
+      \override Lyrics.LyricText.font-shape = #'italic
+	    Con xin, Ta sẽ tặng muôn nước để làm sản nghiệp
+	    Nay khắp trần gian nên như lãnh địa,
+	    Hãy quất chúng, và nghiến nát ra như mảnh
+	    \tweak extra-offset #'(2 . 0)
+      \markup { "sành." \bold "Đ." }
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "7."
+	    Bao quân vương cõi trần mau hãy biết điều tỉnh ngộ,
+	    Mãy hãy thành tâm suy tôn Chúa Trời,
+	    Hãy khiếp hãi, phục bái dưới chân ngai của
+	    \tweak extra-offset #'(2 . 0)
+      \markup { "Ngài." \bold "Đ." }
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "8."
+      \override Lyrics.LyricText.font-shape = #'italic
+	    Sao vua quan thế trần mưu tính nhất tề nổi dậy
+	    Toan chống lịa Đấng Chúa đã xức
+	    \tweak extra-offset #'(2 . 0)
+      \markup { "dầu." \bold "Đ." }
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "9."
+      \override Lyrics.LyricText.font-shape = #'italic
+	    Nơi cao sang cửu trùng, Thiên Chúa thấy vậy tức cười
+	    Đây Chúa nhạo khinh mưu toan hão
+	    \tweak extra-offset #'(2 . 0)
+      \markup { "huyền." \bold "Đ." }
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "10."
+	    Đây Tân Vương tiếp lời: Tôi xướng sắc phong Chúa truyền
+	    Đây chính là Con, nay Ta sinh
+	    \tweak extra-offset #'(2 . 0)
+      \markup { "hạ." \bold "Đ." }
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "11."
+      \override Lyrics.LyricText.font-shape = #'italic
+	    Con mau mau lấy trượng vung cánh để đập nát họ.
+	    Mau nghiến họ tan ra như mảnh
+	    \tweak extra-offset #'(2 . 0)
+      \markup { "sành." \bold "Đ." }
     }
   >>
 }
 
 loiPhanHai = \lyricmode {
-  Lạy Chúa, ai theo Chúa sẽ được ánh sáng ban sự sống.
+  Cha sẽ cho Con chư dân làm sản nghiệp.
 }
 
 loiPhanBa = \lyricmode {
-  Phúc thay người đặt niềm tin cậy nơi Chúa.
+  Phúc thay những ai vững niềm tin nơi Chúa.
 }
 
 loiPhanBon = \lyricmode {
-  Ta sẽ cho kẻ thắng trận ăn trái cây sự sống.
+  Lạy Chúa, xin chiếu ánh Thiên Nhan trên mình chúng con.
 }
 
 loiPhanNam = \lyricmode {
-  Anh em hãy bắt chước Thiên Chúa như con cái dấu yêu của Ngài.
+  Con là Con Cha, hôm nay Cha đã sinh hạ con.
 }
 
 % Dàn trang
@@ -317,6 +370,7 @@ loiPhanNam = \lyricmode {
 			       "Deja Vu Serif Condensed"
 			       (/ 20 20)))
   print-page-number = ##f
+  page-count = 2
 }
 
 \markup {
@@ -337,7 +391,7 @@ loiPhanNam = \lyricmode {
     \column {
       \left-align {
         \line { \small "-t6 /4PS: câu 4, 6, 7 + Đ.4" }
-        \line { \small "Cầu khi bị bách hại: 1, 2, 7 + Đ" }
+        \line { \small "Cầu khi bị bách hại: 1, 2, 7 + Đ.2" }
       }
     }
   %}
@@ -414,7 +468,7 @@ loiPhanNam = \lyricmode {
   >>
   \layout {
     indent = 10
-    \override Lyrics.LyricSpace.minimum-distance = #0.8
+    \override Lyrics.LyricSpace.minimum-distance = #0.5
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
     ragged-last = ##f
