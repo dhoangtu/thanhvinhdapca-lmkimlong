@@ -118,7 +118,7 @@ nhacPhanMot = \relative c'' {
   a a r d, |
   g8. g16 f8 f ~ |
   f d c4 \bar "||"
-  r8 g'4 e8 |
+  r8 g'4 e8 | \break
   f4 r8 a |
   f8. f16 bf8 g |
   c4. a16 (g) |

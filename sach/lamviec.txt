@@ -1,0 +1,584 @@
+Hướng dẫn sử dụng Lilypond
+
+Lilypond là phần mềm soạn nhạc, tương tự như những phần mềm soạn nhạc khác như Encore, Sibelius, ...
+Nhưng không giống như những phần mềm soạn nhạc khác đòi hỏi phí bản quyền sử dụng, Lilpyond hoàn toàn miễn phí
+
+Được hỗ trợ bởi cộng đồng Lilypond trên toàn thế giới, email lilypond-user@gnu.org
+Không giống những tập tin nhạc soạn thảo bởi những phần mềm khác, file .ly soạn thảo bởi Lilypond rất nhẹ, và là tập tin thuần văn bản đơn giản,
+chỉ chứa những ký tự người có thể đọc được và chỉnh sửa dễ dàng.
+
+Phiên bản mới nhất của Lilypond được sử dụng trong bộ CA LÊN ĐI, Lilypond 2.22.1
+
+Ưu điểm của Lilypond:
+- Miễn phí, không cần phí bản quyền
+- Tập tin dung lượng rất nhẹ, dễ chia sẻ và lưu trữ
+- Khả năng tùy chỉnh rất cao, có thể tùy chỉnh gần như tất cả những yếu tố của bản nhạc như ...
+
+Nhược điểm của Lilypond:
+- Khó sử dụng cho người mới bắt đầu, cần thời gian học cách dùng
+- 
+
+Frescobaldi
+
+
+
+===
+Dấu nháy kép trong Lời bài hát
+“”
+
+dịch chuyển nốt theo chiều ngang sáng trái hoặc sang phải
+\once \override NoteColumn.force-hshift = #-1.3
+hoặc
+\once \override NoteColumn.X-offset = 1 <>
+
+  
+  \markup { \fontsize #1 
+
+  top-margin = 3\mm
+  bottom-margin = 3\mm
+  left-margin = 3\mm
+  right-margin = 3\mm
+  
+  system-system-spacing = #'((basic-distance . 0.1) (padding . 2.5))
+
+  \notBePhu -1
+  
+  \autoPageBreaksOff
+  \pageBreak
+
+===markup with fill line
+\markup {
+  \fill-line {
+    \column {
+      \huge \line { \bold "chú ý:" \normal-text " dịp Ngân Khánh Hôn Phối, lần trở lại," }
+      \huge \line { "xin hát với những chưữ in nghiêng ở dòng thứ ba." }
+    }
+    \hspace #2
+    \column \italic {
+    }
+  }
+}
+
+===markup between 2 songs with left align
+\markup {
+  \vspace #2
+  \column {
+    \left-align {
+      \line {
+        \bold "Khi kiệu Thánh Thể"
+      }
+      \line {
+        \normal-text \italic "Hát lại 4 câu trên khi cuộc rước còn tiếp diễn."
+      }
+      \line {
+        \normal-text \italic "Khi linh mục đã đặt Mình Thánh lên bàn thờ, hát câu 5 & 6:"
+      }
+    }
+  }
+}
+
+staff group 319-tran-the-vang-khuc-hoan-ca.ly
+
+#(define-markup-list-command (paragraph layout props args) (markup-list?)
+  (interpret-markup-list layout props
+   (make-justified-lines-markup-list (cons (make-hspace-markup 2) args))))
+
+% Candide, Voltaire
+\markuplist {
+  \override-lines #'(baseline-skip . 2.5) {
+    \paragraph {
+      Monsieur le baron était un des plus puissants seigneurs de la
+    }
+  }
+}
+
+ \markup {
+   "A simple tune"
+   \footnote "*" \italic "* By me"
+   "is shown below.  It is a recent"
+   \footnote \super &dagger; \concat {
+     \super &dagger; \italic " Aug 2012"
+   }
+   "composition."
+ }
+
+====
+In Nhịp của bài hát theo dạng số (4/4 thay vì C)
+\numericTimeSignature
+
+Thiết lập khoảng cách giữa 2 khuông nhạc trên 2 dòng (khi xuống dòng)
+system-system-spacing = #'((basic-distance . 0.1) (padding . 3))
+
+
+<>^\markup { \fontsize #6 \box \bold A }
+<>^\markup { \halign #-2 \fontsize #2 \bold "Tận" }
+\set Staff.explicitClefVisibility = #end-of-line-invisible
+\override Staff.TimeSignature.break-visibility = #end-of-line-invisible
+\set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+\set Staff.printKeyCancellation = ##f
+
+Một nốt chính và hai nốt phụ (nốt hát với từ được đánh dấu)
+  <<
+    {
+      \voiceOne
+      g8
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      \once \override NoteColumn.force-hshift = #-1.6
+      \tweak font-size #-2
+      \parenthesize
+      g16
+      \once \override NoteColumn.force-hshift = #-1.3
+      \tweak font-size #-2
+      \parenthesize
+      g
+    }
+  >>
+
+Một nốt chính và một nốt phụ (nốt hát với từ được đánh dấu)
+  <<
+    {
+      \voiceOne
+      g8
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      \once \override NoteColumn.force-hshift = #-1
+      \parenthesize
+      f8
+    }
+  >>
+
+Tác giả in trên nhiều dòng
+  poet = \markup {
+    \column {
+      \line { "Ý: Lc 22,42. 23,46. Mc 15,14" }
+      \line { "    Dt 10,8-9. Ga 5,30. 6,38"  }
+    }
+  }
+
+Dấu nối sau ký hiệu tái đoạn
+c8 \repeatTie
+
+Thiết lập số cho ô nhạc hiện tại
+\set Score.currentBarNumber = #16
+
+Khuông nhạc phụ bên trên khuông nhạc chính
+  <<
+    {
+      r8 c ^> c4 ~ |
+      c4 r
+    }
+    {
+      \new Staff = "oasis" \with {
+        alignAboveContext = #"1"
+        \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 6))
+        \remove "Time_signature_engraver"
+        fontSize = #-3
+        \override StaffSymbol.staff-space = #(magstep -3)
+        firstClef = ##f
+      } {
+          %\startStaff
+          r4
+          _\markup { \italic "(Đàn)" }
+          r8 c |
+          a f16 f g8 g
+          %\stopStaff
+      }
+    }
+  >>
+
+Tắt chế độ tự động sang trang (chỉ sang trang khi có lệnh sang trang)
+\autoPageBreaksOff
+
+Lệnh sang trang
+\pageBreak
+
+
+\once \phrasingSlurDashed
+a \(g\)
+
+\new Staff \with {
+  \consists "Merge_rests_engraver"
+  printPartCombineTexts = ##f
+}
+<<
+  \clef bass
+\new Voice \TongNhip \partCombine 
+  \nhacDiepKhucBaBeTenor
+  \nhacDiepKhucBaBeBas
+\new NullVoice = beBas \nhacDiepKhucBaBeBas
+\new Lyrics \lyricsto beBas \loiDiepKhucBaBeBas
+>>
+
+\new Voice \TongNhip \partCombine
+{ \partCombineChords \nhacDiepKhucSop }
+{ \stemUp \notBePhu -3 \nhacDiepKhucBas }
+
+\new Voice \TongNhip \partCombine 
+\nhacPhienKhucSopHai
+\notBePhu -2 { \nhacPhienKhucAltoHai }
+
+\new NullVoice = nhacThamChieu \nhacDiepKhucSop
+\new Lyrics \lyricsto nhacThamChieu \loiDiepKhuc
+
+\set Score.repeatCommands = #'((volta "1"))
+\set Score.repeatCommands = #'((volta #f) (volta "2") end-repeat)
+\set Score.repeatCommands = #'((volta #f))
+
+  <<
+  { chết }
+  \new Lyrics {
+	  \set associatedVoice = "beBas"
+	  \override Lyrics.LyricText.font-shape = #'italic
+	  lặn
+	}
+  >>
+
+% Đổi kích thước nốt cho bè phụ
+notBePhu =
+#(define-music-function (font-size music) (number? ly:music?)
+   (for-some-music
+     (lambda (m)
+       (if (music-is-of-type? m 'rhythmic-event)
+           (begin
+             (set! (ly:music-property m 'tweaks)
+                   (cons `(font-size . ,font-size)
+                         (ly:music-property m 'tweaks)))
+             #t)
+           #f))
+     music)
+   music)
+   
+\mergeDifferentlyHeadedOn
+\mergeDifferentlyDottedOn
+
+\once \override NoteColumn.force-hshift = #1.7
+
+\mergeDifferentlyHeadedOn
+\override NoteColumn.ignore-collision = ##t
+
+\compressEmptyMeasures
+^\markup { \rest #"4" }
+
+\mark "Tận"
+
+\mark \markup { "Tận" }
+<>^\markup { \halign #-2 \fontsize #2 \bold "Tận" }
+
+\change Staff = "alto"
+
+<>^\markup { \halign #35 " " }
+
+\once \override NoteColumn.X-offset = 1 <>
+\tweak extra-offset #'(1 . 0)
+
+layout
+    \context {
+      \Staff \RemoveEmptyStaves
+      \override VerticalAxisGroup.remove-first = ##t
+    }
+
+  <<
+    {
+      \voiceOne
+      d2 |
+    }
+
+    \new Voice = "splitpart" {
+      \voiceTwo
+      a,2 |
+    }
+  >>
+  \oneVoice
+
+Không in các dấu bình khi chuyển tông
+\set Staff.printKeyCancellation = ##f
+
+^\tweak control-points #'((-2 . 3) (-1 . 3.1) (0 . 3.2) (1 . 2.4)) ( <> )
+
+Dịch chuyển nốt theo chiều ngang cùng với lời
+\once \override NoteColumn.X-offset = 5 <>
+
+Thêm Đánh Dấu
+<>^\markup { \fontsize #6 \box \bold A }
+
+In nghiêng cho lời
+\override Lyrics.LyricText.font-shape = #'italic
+
+#(define afterGraceFraction (cons 1 4))
+
+  \afterGrace d4 ({
+    \override Flag.stroke-style = #"grace"
+    e16)}
+  \revert Flag.stroke-style
+
+  \set Staff.keyAlterations = #`(((0 . 6) . ,NATURAL)
+                                 ((1 . 2) . ,NATURAL)
+                                 ((0 . 5) . ,NATURAL))
+
+  a  ({
+    \override Flag.stroke-style = #"grace"
+  b)}
+  \revert Flag.stroke-style
+
+\override Flag.stroke-style = #"grace"
+\revert Flag.stroke-style
+
+\override Score.SpacingSpanner packed-spacing = ##t
+	
+\repeat unfold 13 { _ }
+
+_\markup { \rest #"8" }
+
+\tweak extra-offset #'(0 . 3)
+
+-\markup { \raise #5 \rest #"4" }
+
+\override LyricText.extra-offset = #'(0 . 1)
+
+dropLyrics =
+{
+    \override LyricText.extra-offset = #'(0 . -5)
+    \override LyricHyphen.extra-offset = #'(0 . -5)
+    \override LyricExtender.extra-offset = #'(0 . -5)
+}
+
+raiseLyrics =
+{
+    \revert LyricText.extra-offset
+    \revert LyricHyphen.extra-offset
+    \revert LyricExtender.extra-offset
+}
+
+\override LyricHyphen.minimum-distance = #2.0
+  \once \override LyricText.self-alignment-X = #CENTER
+  
+  \layout { ragged-right = ##f }
+  
+    \override LyricText.extra-offset = #'(0 . 8.6)
+    \override LyricExtender.extra-offset = #'(0 . 8.6)
+    \override LyricHyphen.extra-offset = #'(0 . 8.6)
+    
+
+\once \override NoteColumn.X-offset = 3
+
+Thiết lập khoảng cách tối thiểu giữa 2 từ ở hai bên dấu gạch nối
+\override LyricHyphen.minimum-distance = #2.0
+
+Không in Nhịp ở đầu khuông nhạc
+\override Staff.TimeSignature.transparent = ##t
+
+
+%\override Lyrics.LyricText.font-size = #+2
+
+Thiết lập khoảng cách tối thiểu giữa 2 từ của Lời bài hát
+\override Lyrics.LyricSpace.minimum-distance = #3
+
+Không in số ô nhịp
+\override Score.BarNumber.break-visibility = ##(#f #f #f)
+
+
+\override Score.SpacingSpanner.uniform-stretching = ##t
+%\override Score.SpacingSpanner packed-spacing = ##t
+\set Score.defaultBarType = ""
+\set Score.barAlways = ##t
+ragged-last = ##f
+
+
+\once \override Score.RehearsalMark.extra-offset = #'( -2 . 1.75 )
+
+\once \override Score.RehearsalMark #'break-visibility = #end-of-line-visible
+
+  \once \override Score.RehearsalMark.font-size = #0.1
+  \mark \markup { \musicglyph #"scripts.segno" }
+  
+  \once \override Score.RehearsalMark.font-size = #2
+  \mark \markup { \musicglyph #"scripts.coda" }
+  <>^\markup { "Al" \bold " CODA" }
+
+
+%\markup { \vspace #0.5 }
+	
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+
+TongNhip = {
+  \key c \major \time 2/2 
+  \set Timing.beamExceptions = #'()
+  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  \set Timing.beatStructure = #'(1 1 1 1)
+}
+
+\once \override Slur #'extra-offset = #'(0 . 2)
+\once \override Slur #'control-points = #'((x . y) (x . y) (x . y) (x . y))
+\once \override Slur #'extra-offset = #'(x . y)
+
+\tweak extra-offset #'(0 . 3)
+
+_\markup { \lower #3.3 \halign #-0.3 \italic "(Intro)" }
+
+
+  system-system-spacing = #'((basic-distance . 11.5)
+                             (minimum-distance . 11.5)
+                             (padding . 1))
+  score-system-spacing = #'((basic-distance . 11.5)
+                             (minimum-distance . 11.5)
+                             (padding . 1))
+  
+\new Lyrics \with {
+          \override VerticalAxisGroup.
+            nonstaff-relatedstaff-spacing.padding = #1
+          \override VerticalAxisGroup.
+            nonstaff-unrelatedstaff-spacing.padding = #1
+        }
+        \lyricsto 
+
+
+<<
+  \new Staff <<
+    \new Voice = "voc" \relative c' { \stemDown a bes c8 b c4 }
+  >>
+  \new Lyrics \with {
+    \override LyricText.extra-offset = #'(0 . 8.6)
+    \override LyricExtender.extra-offset = #'(0 . 8.6)
+    \override LyricHyphen.extra-offset = #'(0 . 8.6)
+  } \lyricsto "voc" { La la -- la __ _ la }
+>>
+
+
+graceOn =
+\applyContext
+#(lambda (c)
+  (for-each
+   (lambda (e)
+    (let ((ct (ly:context-find c (car e))))
+     (if ct
+      (apply ly:context-pushpop-property ct (cdr e)))))
+   (ly:context-property c 'graceSettings)))
+
+graceOff =
+\applyContext
+#(lambda (c)
+  (for-each
+   (lambda (e)
+    (let ((ct (ly:context-find c (car e))))
+     (if ct
+      (apply ly:context-pushpop-property ct (list-head (cdr e) 2)))))
+   (ly:context-property c 'graceSettings))) 
+
+slurShiftx=
+#(define-music-function (amount offsets)
+   (pair? pair?)
+   #{
+     \once \override Slur.positions = $offsets
+     \once \override Voice.Slur.outside-staff-priority = #'()
+     \once \override Voice.Slur.Y-offset = 0
+     \once \override Voice.Slur.extra-offset = $amount
+   #}
+   )
+
+notBePhu =
+#(define-music-function (font-size music) (number? ly:music?)
+   (for-some-music
+     (lambda (m)
+       (if (music-is-of-type? m 'rhythmic-event)
+           (begin
+             (set! (ly:music-property m 'tweaks)
+                   (cons `(font-size . ,font-size)
+                         (ly:music-property m 'tweaks)))
+             #t)
+           #f))
+     music)
+   music)
+
+Find and replace
+    \override Score.BarNumber.break-visibility = ##(#f #f #f)
+    \override Score.BarNumber.break-visibility = ##(#f #f #f)\r    \override Score.SpacingSpanner.uniform-stretching = ##t
+
+
+Latex file
+	{\lhead[]{} \rhead{\rmfamily\bfseries\fontsize{14pt}{14pt}\selectfont\thepage} \includepdf[pagecommand={\thispagestyle{fancy}},pages=\thepage,noautoscale=true,offset=0.3cm -0.3cm]{bai-hat.pdf}}
+	{\lhead{\rmfamily\bfseries\fontsize{14pt}{14pt}\selectfont\thepage} \rhead[]{} \includepdf[pagecommand={\thispagestyle{fancy}},pages=\thepage,noautoscale=true,offset=0.3cm -0.3cm]{bai-hat.pdf}}
+
+- sua loi not nhac
+- table of content
+
+- setup ssh key
+
+git remote remove origin
+git remote set-url origin git@github.com:dhoangtu/tuyentaphopca-lmkimlong.git
+git push --set-upstream origin main
+
+add to local config file
+  [remote "origin"]
+    url = git@github.com:dhoangtu/tuyentaphopca-lmkimlong.git
+
+/home/dhtu/bin/lilypond  --output=/home/dhtu/Desktop/CATH/thanhcalilypond/cadoanhienlinh-thanhvinhdapca/107-theo-anh-sao.pdf -dno-point-and-click --pdf /home/dhtu/Desktop/CATH/thanhcalilypond/cadoanhienlinh-thanhvinhdapca/107-theo-anh-sao.ly
+
+/home/dhtu/bin/lilypond  --output=/home/dhtu/Desktop/CATH/thanhcalilypond/cadoanhienlinh-thanhvinhdapca/017-chua-hien-linh.pdf -dno-point-and-click --pdf /home/dhtu/Desktop/CATH/thanhcalilypond/cadoanhienlinh-thanhvinhdapca/017-chua-hien-linh.ly
+
+/home/dhtu/Desktop/CATH/Software/cpdf-binaries-master/Linux-Intel-64bit/cpdf ./bia-truoc.pdf ./blank-a4.pdf song-odd-even.pdf ./blank-a4.pdf ./bia-sau.pdf -o song-book.pdf
+
+
+/home/dhtu/bin/lilypond --output=bia-sau-me-van-yeu-thuong -dno-point-and-click -fpng -dresolution=1024 -dpixmap-format=pngalpha bia-sau-me-van-yeu-thuong.ly
+
+s
+/home/dhtu/bin/lilypond --output=bia-sau-me-van-yeu-thuong -dno-point-and-click --pdf bia-sau-me-van-yeu-thuong.ly
+
+
+#!/bin/bash
+
+for i in `ls *.pdf`; do convert "$i" -density 90x90 -crop 1024x768+0+0\! +repage -transparent white "$i".png;
+
+rm *.ly~
+done
+
+
+git config --global core.sshCommand "'C:\\Program Files\\Git\\usr\\bin\\ssh.exe'"
+
+git config core.sshCommand "'C:\\Program Files\\Git\\usr\\bin\\ssh.exe' -i C:/Home/.ssh/id_rsa_name"
+
+
+---CRITERIA
+1. copyright: ". For non-commercial use"
+    copyright text size
+2. Top margin
+3. Bottom margin
+4. Left margin
+5. Right margin
+6. Page number Size
+7. Page number position
+8. Distance between Title and notes (when no composer)
+9. No ident
+10. System-spacing: prefer 3, not prefer 5
+11. table of content
+12. Introduction/Preface/Acknowledgement
+13. Compare beam-up vs auto-beam
+14. TRANSPOSE if necessary
+
+//*** manually default system-distance = 3 padding = 3
+* table of content
+* Introduction/Preface/Acknowledgement
+
+- generate lilypond
+    ./gen-lilypond.sh
+
+- resize page
+    included in ./gen-lilypond.sh
+    
+    ~/Desktop/software/pdfScale.sh -v -r a5 -s 0.90 "Bring Flowers Of The Rarest@Mary E. Walsh.pdf" "./resized/Bring Flowers Of The Rarest@Mary E. Walsh.pdf"
+
+- merge PDF files with Table Of Contents
+  ~/Desktop/software/cpdf "./resized-90/Ave Verum Corpus@W.A. Mozart.pdf" "./resized-90/If Ye Love Me@Thomas Tallis.pdf" -o out.pdf
+  ~/Desktop/software/cpdf  "./resized-90/Ave Verum Corpus@W.A. Mozart.pdf" "./resized-90/If Ye Love Me@Thomas Tallis.pdf"  -o out.pdf
+
+- adjust even-odd page
+    pdfjam --twoside --paper a5paper --offset '0.5cm 0cm' merge-07.pdf
+    FAILED pdfjam --twoside --pagesize '{14.5cm,20.5cm}' --offset '0.5cm 0cm' merge-06.pdf
+
+- add page number
+    pdflatex song-odd-even.tex
+
+- pdf page size
+    pdfinfo song-odd-even.pdf | grep "Page size" | grep -Eo '[-+]?[0-9]*\.?[0-9]+' | awk -v x=0.3528 '{print $1*x}'
