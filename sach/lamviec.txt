@@ -23,6 +23,36 @@ Frescobaldi
 
 
 ===
+Bỏ ký hiệu Số Chỉ Nhịp
+\score {
+  <<
+    \new Staff \with {
+      \remove "Time_signature_engraver" <<
+        \clef treble
+        \new Voice = beSop {
+          \nhacPhanHai
+        }
+      \new Lyrics \lyricsto beSop \loiPhanHai
+    >>
+  >>
+}
+
+
+Tái đoạn
+\repeat volta 2
+{
+  \partial 4 cs8 d |
+  e2 e8 r |
+}
+\alternative {
+  {
+    b4 b gs8 e |
+  }
+  {
+    b4. b8 gs e |
+  }
+}
+
 Dấu nháy kép trong Lời bài hát
 “”
 
