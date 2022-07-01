@@ -371,6 +371,7 @@ loiPhanNam = \lyricmode {
 \score {
   <<
     \new Staff \with {
+      \remove "Time_signature_engraver"
       instrumentName = \markup { \bold "Đ.1" }} <<
         \clef treble
         \new Voice = beSop {
@@ -391,6 +392,7 @@ loiPhanNam = \lyricmode {
 \score {
   <<
     \new Staff \with {
+      \remove "Time_signature_engraver"
       instrumentName = \markup { \bold "Đ.2" }} <<
         \clef treble
         \new Voice = beSop {
@@ -411,6 +413,7 @@ loiPhanNam = \lyricmode {
 \score {
   <<
     \new Staff \with {
+      \remove "Time_signature_engraver"
       instrumentName = \markup { \bold "Đ.3" }} <<
         \clef treble
         \new Voice = beSop {
@@ -431,6 +434,7 @@ loiPhanNam = \lyricmode {
 \score {
   <<
     \new Staff \with {
+      \remove "Time_signature_engraver"
       instrumentName = \markup { \bold "Đ.4" }} <<
         \clef treble
         \new Voice = beSop {

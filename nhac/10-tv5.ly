@@ -3,7 +3,7 @@
 \include "english.ly"
 
 \header {
-  title = "Thánh Vịnh 3"
+  title = "Thánh Vịnh 5"
   composer = "Lm. Kim Long"
   tagline = ##f
 }
@@ -121,67 +121,55 @@ stanzaReminderOn = \undo \stanzaReminderOff
 
 % Nhạc
 nhacPhanMot = \relative c' {
-  \key f \major
+  \key c \major
   \time 2/4
-  \partial 8 d8 |
-  a'4. bf8 |
-  g4 \tuplet 3/2 { a8 f e } |
-  d4 r8 a' |
+  d8. e16 c8 b |
+  e4. e8 |
+  c' c4 a8 |
   d4. d8 |
-  bf4 \tuplet 3/2 { d8 g, bf } |
-  a4 r8 e |
-  g4. a8 |
-  f8. f16 \tuplet 3/2 { a8 d, d } |
-  e4 r8 bf'16 a |
-  g4. e8 |
-  e g4 a8 |
-  a4 \bar "||"
+  e2 |
+  d8 c16 (d) e8 (d16 c) |
+  a8 b b4 ~ |
+  b8 e, e e |
+  c' (b) g a |
+  a2 \bar "||"
 }
 
 nhacPhanHai = \relative c'' {
-  \key d \major
+  \key c \major
   \time 2/4
-  \partial 8
+  a4. b16 a |
+  g4. e8 |
   <<
     {
-      a8 |
-      fs4 \tuplet 3/2 { fs8 g g } |
-      e8. e16 \tuplet 3/2 { e8 a cs, } |
-      d2 ~ |
-      d4 r8
+      c'4 \tuplet 3/2 { d8 e b }
     }
-    { \notBePhu -2 {
-      cs8 |
-      d4 \tuplet 3/2 { d8 e d } |
-      cs8. cs16 \tuplet 3/2 { a8 fs' e } |
-      fs2 ~ |
-      fs4 r8
-    }}
+    {
+      a4 \tuplet 3/2 { b8 a gs }
+    }
   >>
-  \bar "|."
+  a2 \bar "|."
 }
 
 nhacPhanBa = \relative c'' {
-  \key d \major
+  \key c \major
   \time 2/4
-  \partial 8
+  a4. b16 (a) |
+  g4 r8 e |
   <<
     {
-      a8 |
-      a4. fs8 |
-      g4 e8 cs |
-      d2 ~ |
-      d4 r8 \bar "|."
+      c'4. c16 d |
+      b4 \tuplet 3/2 { b8 c b } |
+      a2 ~ |
+      a4 r \bar "|."
     }
-    { \notBePhu -2 {
-      fs8 |
-      fs4. d8 |
-      e4 g8 e |
-      fs2 ~ |
-      fs4 r8
-    }}
+    {
+      a4. a16 f |
+      d4 \tuplet 3/2 { e8 e e }
+      c2 ~ |
+      c4 r
+    }
   >>
-  \bar "|."
 }
 
 % Lời
@@ -189,37 +177,47 @@ loiPhanMot = \lyricmode {
   <<
     {
       \set stanza = "1."
-      Nhiều thay, Chúa ơi, biết bao quân thù,
-      nhiều thay những kẻ đứng dậy chống con,
-      nhiều thay những bọn bàn tán về mạng con:
-      Chúa trên cao, Ngài nào đâu cứu nó!
+      Xin lắng nghe lời con, và thấu suốt lời con than vãn,
+      Xin để ý lời kêu van,
+      Lạy Ngài là Chúa, là Vua con.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "2."
       \override Lyrics.LyricText.font-shape = #'italic
-	    Nguyện Chúa trở nên thuẫn khiên độ trì,
-	    nhờ Chúa, khiến con ngẩng đầu hiển vang,
-	    Vừa khi cất lời cầu khấn Ngài dủ thương,
-	    Chúa đáp ngay từ đỉnh cao núi thánh.
+	    Bao lũ gây điều ác, nào đứng vững được nơi Nhan Chúa.
+	    Quân tội lỗi, phường kiêu căng
+	    chẳng được ở với Ngài khi nao.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "3."
-	    Nhờ tay Chúa luôn chở che độ trì,
-	    này con mới nằm đã ngủ thiếp đi.
-	    Và khi thức dậy nào có còn sợ chi,
-	    dẫu quanh con địch thù vây tứ phía.
+	    Thiên Chúa tru diệt hết bọn ác đức và quân gian dối,
+	    kinh tởm những kẻ điêu ngoa,
+	    miệt thị bọn sát hại tha nhân.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "4."
+      \override Lyrics.LyricText.font-shape = #'italic
+	    Do nghĩa ân của Chúa được tiến bước vào nơi cung thánh,
+	    Con phục bái và suy tôn, vọng về đền thánh, lòng tin yêu.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "5."
+	    Ai náu thân vào Chúa sẽ hát hướng mừng vui khôn xiết,
+	    Ai hằng kính sợ Tôn Danh, nhảy mừng vì Chúa hở che luôn.
     }
   >>
 }
 
 loiPhanHai = \lyricmode {
-  Chúa ơi, xin hãy đứng lên ra tay cứu độ con.
+  Xin Chúa lưu tâm điều con rên xiết van nài.
 }
 
 loiPhanBa = \lyricmode {
-  Chúa sẽ nâng đỡ linh hồn con.
+  Xin dẫn con, lạy Chúa xin dẫn con trong đức công minh.
 }
 
 % Dàn trang
@@ -248,12 +246,13 @@ loiPhanBa = \lyricmode {
     }
     \column {
       \left-align {
-        \line { \small "-t2 c /4TN: cả 3 câu + Đ.1" }
+        \line { \small "-t2 c /11TN: câu 1,2,3 + Đ.2" }
+        \line { \small "-t3 l /13TN: câu 2,3,4 + Đ.1" }
       }
     }
     \column {
       \left-align {
-        \line { \small "-t3 l /33TN: cả 3 câu + Đ.2" }
+        \line { \small "-t2 c /23TN: câu 2,3,5 + Đ.1" }
       }
     }
   }
@@ -291,7 +290,6 @@ loiPhanBa = \lyricmode {
   >>
   \layout {
     indent = 10
-    \override Staff.TimeSignature.transparent = ##t
     \override Lyrics.LyricSpace.minimum-distance = #0.8
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
@@ -313,7 +311,6 @@ loiPhanBa = \lyricmode {
   >>
   \layout {
     indent = 10
-    \override Staff.TimeSignature.transparent = ##t
     \override Lyrics.LyricSpace.minimum-distance = #0.8
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
