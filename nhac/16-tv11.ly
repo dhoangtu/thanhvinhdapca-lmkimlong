@@ -3,7 +3,7 @@
 \include "english.ly"
 
 \header {
-  title = "Thánh Vịnh 9B"
+  title = "Thánh Vịnh 11"
   composer = "Lm. Kim Long"
   tagline = ##f
 }
@@ -121,65 +121,44 @@ stanzaReminderOn = \undo \stanzaReminderOff
 
 % Nhạc
 nhacPhanMot = \relative c'' {
-  \key bf \major
+  \key g \major
   \time 2/4
-  \partial 8 bf8 |
-  a8. g16 \tuplet 3/2 { fs8 g a } |
-  bf4 \tuplet 3/2 { g8 a bf } |
-  c8. c16 \tuplet 3/2 { d8 bf g } |
-  a4 r8 bf16 a |
-  g8. d16 \tuplet 3/2 { g8 ef d } |
-  c4 \tuplet 3/2 { bf8 c d } |
-  d8. ef16 \tuplet 3/2 { d8 a' gs } |
-  g4 r8 \bar "||"
+  \partial 8 b16 c |
+  a4. g16 (a) |
+  b4 \tuplet 3/2 { g8 g g } |
+  a4. b8 |
+  e,4 r8 g16 d |
+  d4. g8 |
+  fs g4 b8 |
+  a4. a16 d |
+  a4. e8 |
+  a c4 e8 |
+  d4 r8 b16 b |
+  c4. a8 |
+  fs e4 d8 |
+  g2 ~ |
+  g4 \bar "||"
 }
 
 nhacPhanHai = \relative c' {
-  \key bf \major
+  \key g \major
   \time 2/4
-  \partial 8 d8 |
+  \partial 4
+  d4 |
   <<
     {
-      bf'4. a16 g |
-      c8 d
+      b'4. b16 c |
+      a4 \tuplet 3/2 { d,8 a' a } |
+      g2 ~ |
+      g4 r8 \bar "|."
     }
     {
-      g,4. d16 d |
-      a'8 g
+      g4. g16 e |
+      d4 \tuplet 3/2 { c8 c c } |
+      b2 ~ |
+      b4 r8
     }
   >>
-  <<
-    {
-      \voiceOne
-      bf16 (a) d8
-    }
-    \new Voice = "splitpart" {
-      \voiceTwo
-      fs,8 fs
-    }
-  >>
-  \oneVoice
-  g2 ~ |
-  g4 r8 \bar "|."
-}
-
-nhacPhanBa = \relative c' {
-  \key bf \major
-  \time 2/4
-  \partial 8 d8 |
-  <<
-    {
-      bf'4. a16 bf |
-      c4. bf16 c |
-      d8 d bf a
-    }
-    {
-      g4. fs16 g |
-      a4. g16 a |
-      bf8 a g fs
-    }
-  >>
-  g4 r8 \bar "|."
 }
 
 % Lời
@@ -187,63 +166,33 @@ loiPhanMot = \lyricmode {
   <<
     {
       \set stanza = "1."
-      Chúa ơi, sao đành tâm xa cách,
-      ngày con nguy nan sao ngoảnh mặt làm ngơ,
-      Lũ ác nhân rượt bắt kẻ cơ bần,
-      họ sa ác kế của bọn chúng bày ra.
+      Xin cứu con, lạy Chúa, vì nào còn ai thánh thiện,
+      giữa loài người không một kẻ tín trung,
+      người với người chỉ toàn truyện dối gian,
+      môi thơn thớt nhưng lòng một dạ hai.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "2."
       \override Lyrics.LyricText.font-shape = #'italic
-	    Ác nhân phơi bày bao ham hố,
-	    lại coi khinh CHúa nên bóc lột phàm nhân,
-	    dám ngông nghênh và nhắc nhở luôn miệng:
-	    Làm chi có Chúa, chẳng sợ Chúa phạt đâu.
+	    Ước mong sao, lạy Chúa, ngài diệt phường môi thớ lợ,
+	    lưỡi phỉnh phờ chuyên đặt truyện dối gian.
+	    Họ nói rằng:
+	    nhờ cặp môi giúp ta, ta khôn khéo, ai làm chủ được ta.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "3."
-	    Ác nhân suy tưởng luôn như thế,
-	    việc họ mưu toan luôn cứ vẫn thành công,
-	    thế cho nên họ mãi luôn tự hào,
-	    và coi phán quyết của Ngài quá vời xa.
-    }
-    \new Lyrics {
-	    \set associatedVoice = "beSop"
-	    \set stanza = "4."
-      \override Lyrics.LyricText.font-shape = #'italic
-	    Đối phương nay họ coi khinh hết
-	    và luôn tâm đắc: không mắc họa gì đâu.
-	    Chúng âm mưu phục sẵn ở thôn làng
-	    chờ cơ giết chết những người sống sạch trong.
-    }
-    \new Lyrics {
-	    \set associatedVoice = "beSop"
-	    \set stanza = "5."
-	    Ác nhân môi miệng điêu ngoa quá,
-	    lại thêm tấc lưỡi gian ác rủa nguyền luôn.
-	    Chúng âm mưu phục sẵn ở thôn làng,
-	    chờ cơ giết chết những người sống sạch trong.
-    }
-    \new Lyrics {
-	    \set associatedVoice = "beSop"
-	    \set stanza = "6."
-      \override Lyrics.LyricText.font-shape = #'italic
-	    Chúa thương am tường bao nguy khó
-	    và luôn lưu tâm săn sóc lo liệu cho.
-	    Kẻ đơn côi được Chúa luôn độ trì,
-	    và ai yếu thế cậy nhờ Chúa chở che.
+	    Chân chính thay lời Chúa,
+	    tựa bạc luyện đi nấu lại tới bảy lần trong lò để kết tinh.
+	    Ngài giữ lời, hằng bảo vệ chúng con,
+	    luôn canh giữ cho khỏi bọn này luôn.
     }
   >>
 }
 
 loiPhanHai = \lyricmode {
-  Lạy Chúa xin đừng quên những kẻ khó nghèo.
-}
-
-loiPhanBa = \lyricmode {
-  Lạy Chúa, người công chính được chiêm ngưỡng ánh tôn nhan Ngài.
+  Lạy Chúa xin đoái thương gìn giữ chúng con.
 }
 
 % Dàn trang
@@ -260,12 +209,11 @@ loiPhanBa = \lyricmode {
 			       "Deja Vu Serif Condensed"
 			       (/ 20 20)))
   print-page-number = ##f
-  ragged-bottom = ##t
 }
 
 \markup {
   \vspace #1
-  \fill-line {
+  %\fill-line {
     \column {
       \left-align {
         \line { \bold \small "Sử dụng:" }
@@ -273,15 +221,10 @@ loiPhanBa = \lyricmode {
     }
     \column {
       \left-align {
-        \line { \small "-t7 c /15TN: câu 1,2,5,6 + Đ.1" }
+        \line { \small "-t7 c /6TN: cả 3 câu + Đáp" }
       }
     }
-    \column {
-      \left-align {
-        \line { \small "-t7 l /7PS: câu 3,4 + Đ.2" }
-      }
-    }
-  }
+  %}
 }
 
 \score {
@@ -295,28 +238,7 @@ loiPhanBa = \lyricmode {
     >>
   >>
   \layout {
-    \override Lyrics.LyricSpace.minimum-distance = #0.5
-    \override Score.BarNumber.break-visibility = ##(#f #f #f)
-    \override Score.SpacingSpanner.uniform-stretching = ##t
-  }
-}
-
-\score {
-  <<
-    \new Staff \with {
-      \remove "Time_signature_engraver"
-      instrumentName = \markup { \bold "Đ.1" }} <<
-        \clef treble
-        \new Voice = beSop {
-          \nhacPhanHai
-        }
-      \new Lyrics \lyricsto beSop \loiPhanHai
-    >>
-  >>
-  \layout {
-    indent = 10
-    \override Staff.TimeSignature.transparent = ##t
-    \override Lyrics.LyricSpace.minimum-distance = #0.8
+    \override Lyrics.LyricSpace.minimum-distance = #1.5
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
     ragged-last = ##f
@@ -326,20 +248,21 @@ loiPhanBa = \lyricmode {
 \score {
   <<
     \new Staff \with {
+      %\consists "Merge_rests_engraver"
       \remove "Time_signature_engraver"
-      instrumentName = \markup { \bold "Đ.2" }} <<
+      instrumentName = \markup { \bold "Đáp" }} <<
         \clef treble
         \new Voice = beSop {
-          \nhacPhanBa
+          \nhacPhanHai
         }
-      \new Lyrics \lyricsto beSop \loiPhanBa
+      \new Lyrics \lyricsto beSop \loiPhanHai
     >>
   >>
   \layout {
     indent = 10
-    \override Staff.TimeSignature.transparent = ##t
-    \override Lyrics.LyricSpace.minimum-distance = #1
+    \override Lyrics.LyricSpace.minimum-distance = #0.8
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
+    ragged-last = ##f
   }
 }
