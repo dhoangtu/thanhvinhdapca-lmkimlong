@@ -196,38 +196,23 @@ loiPhanMot = \lyricmode {
   <<
     {
       \set stanza = "1.a."
-      Nguyện Chúa đoái trông và nhậm lời kêu khấn,
-      dọi sáng mắt con để không thiếp ngủ muôn đời.
+      
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "b."
       \override Lyrics.LyricText.font-shape = #'italic
-	    Thù nhân nói đâu được là họ vinh thắng,
-	    và chớ có trông mừng vui thấy con ngã gục.
-    }
-    \new Lyrics {
-	    \set associatedVoice = "beSop"
-	    \set stanza = "2.a."
-	    Phần con những tin cậy vào tình thương Chúa,
-	    được Chúa cứu nguy, lòng con hớn hở reo mừng.
-    }
-    \new Lyrics {
-	    \set associatedVoice = "beSop"
-	    \set stanza = "b."
-      \override Lyrics.LyricText.font-shape = #'italic
-	    Này con tấu cung đàn và ngợi khen Chúa,
-	    vì những phúc ân Ngài ban xuống cho dư đầy.
+      
     }
   >>
 }
 
 loiPhanHai = \lyricmode {
-  Lạy Chúa, con hớn hở mừng rỡ trong Ngài.
+  
 }
 
 loiPhanBa = \lyricmode {
-  Lạy Chúa con tin cậy vào lượng từ ái của Ngài.
+  
 }
 
 % Dàn trang
@@ -249,7 +234,7 @@ loiPhanBa = \lyricmode {
 
 \markup {
   \vspace #1
-  \fill-line {
+  %\fill-line {
     \column {
       \left-align {
         \line { \bold \small "Sử dụng:" }
@@ -257,15 +242,18 @@ loiPhanBa = \lyricmode {
     }
     \column {
       \left-align {
-        \line { \small "-t4 l /30TN: câu 1,2 + Đ.2" }
-        \line { \small "-sinh nhật Đức Mẹ: câu 2 + Đ.1 (hát a và b riêng thành 2 câu)" }
+        \line { \small "-t3 l /28TN: cả 2 câu + Đ.2" }
+        \line { \small "-t6 l /32TN: cả 2 câu + Đ.1" }
       }
     }
     \column {
       \left-align {
+        \line { \small "-lễ t.Tông Đồ: cả 2 câu + Đ.2" }
+        \line { \small "-lễ vọng T.Phêrô & Phaolô: cả 2 câu + Đ.2" }
+        \line { \small "-Rao giảng Tin Mừng: cả 2 câu + Đ.2" }
       }
     }
-  }
+  %}
 }
 
 \score {

@@ -566,9 +566,10 @@ done
 
 
 git config --global core.sshCommand "'C:\\Program Files\\Git\\usr\\bin\\ssh.exe'"
-
 git config core.sshCommand "'C:\\Program Files\\Git\\usr\\bin\\ssh.exe' -i C:/Home/.ssh/id_rsa_name"
 
+git config --global core.sshCommand "'C:\\data\\install\\Git\\usr\\bin\\ssh.exe'"
+git clone ssh://git@github.com/dhoangtu/thanhvinhdapca-lmkimlong
 
 ---CRITERIA
 1. copyright: ". For non-commercial use"
