@@ -3,28 +3,13 @@
 \include "english.ly"
 
 \header {
-  title = "Thánh Vịnh 18A"
+  title = "Thánh Vịnh 18B"
   composer = "Lm. Kim Long"
   tagline = ##f
 }
 
 % mã nguồn cho những chức năng chưa hỗ trợ trong phiên bản lilypond hiện tại
 % cung cấp bởi cộng đồng lilypond khi gửi email đến lilypond-user@gnu.org
-% Đổi kích thước nốt cho bè phụ
-notBePhu =
-#(define-music-function (font-size music) (number? ly:music?)
-   (for-some-music
-     (lambda (m)
-       (if (music-is-of-type? m 'rhythmic-event)
-           (begin
-             (set! (ly:music-property m 'tweaks)
-                   (cons `(font-size . ,font-size)
-                         (ly:music-property m 'tweaks)))
-             #t)
-           #f))
-     music)
-   music)
-
 % in số phiên khúc trên mỗi dòng
 #(define (add-grob-definition grob-name grob-entry)
      (set! all-grob-descriptions
@@ -120,61 +105,142 @@ stanzaReminderOn = \undo \stanzaReminderOff
 % kết thúc mã nguồn
 
 % Nhạc
-nhacPhanMot = \relative c' {
-  \key f \major
+nhacPhanMot = \relative c'' {
+  \key g \major
   \time 2/4
-  \partial 4. c8 f e |
-  e (f) g f16 (g) |
-  a2 ~ |
-  a8 a a a |
-  c f,4 g16 (f) |
-  d2 ~ |
-  d8 c d f |
-  e (f) g f16 (g) |
-  a2 ~ |
-  a8 bf g g |
-  g bf4 c8 |
-  c2 ~ |
-  c4 \bar "||"
+  \partial 4 g8. g16 |
+  b8 fs e4 ~ |
+  e8 e c' a |
+  d4 d8. c16 |
+  b8 e a,4 ~ |
+  a8 fs e d |
+  g4 r8 \bar "||"
 }
 
 nhacPhanHai = \relative c' {
-  \key f \major
+  \key g \major
   \time 2/4
-  \partial 4 c4 
-  f d8 d |
+  \partial 8 d8 |
   <<
     {
-      g8 g4 f16 (g) |
-      a2 ~ |
-      a8 \bar "|."
+      b'4 g8 g |
+      c8. a16 a8 a |
+      d2 ~ |
+      d4 \bar "|."
     }
     {
-      c,8 c4 d16 (c) |
-      f2 ~ |
-      f8
+      g,4 g8 f! |
+      e8. c16 e8 g |
+      fs2 ~ |
+      fs4
     }
   >>
 }
 
 nhacPhanBa = \relative c'' {
-  \key f \major
+  \key g \major
   \time 2/4
-  \partial 4
+  \partial 8
   <<
     {
-      a8 a |
-      f4 bf8 a |
-      g c4 e,8 |
-      f2 ~ |
-      f8 \bar "|."
+      d8 |
+      b8. g16 c8 c |
+      a4
     }
     {
-      f8 f |
-      d4 g8 f |
-      f e4 c8 |
-      a2 ~ |
-      a8
+      b8 |
+      g8. f!16 e8 a |
+      d,4
+    }
+  >>
+  <<
+    {
+      \voiceOne
+      e8 fs16 (e)
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      c8 c
+    }
+  >>
+  \oneVoice
+  <<
+    {
+      d4. g8 |
+      g4 \bar "|."
+    }
+    {
+      c,4. c8 |
+      b4
+    }
+  >>
+}
+
+nhacPhanBon = \relative c'' {
+  \key g \major
+  \time 2/4
+  \partial 8
+  <<
+    {
+      b8 |
+      b8. a16
+    }
+    {
+      g8 |
+      g8. g16
+    }
+  >>
+  <<
+    {
+      \voiceOne
+      d'8 b16 (a)
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      fs8 g
+    }
+  >>
+  \oneVoice
+  <e c>4
+  <<
+    {
+      \voiceOne
+      e16 (g) e8
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      c8 c
+    }
+  >>
+  \oneVoice
+  <<
+    {
+      d4. g8 |
+      g4 \bar "|."
+    }
+    {
+      c,4. c8 |
+      b4
+    }
+  >>
+}
+
+nhacPhanNam = \relative c' {
+  \key g \major
+  \time 2/4
+  \partial 8 d8 |
+  <<
+    {
+      b'4 d8 d |
+      g, a4 e8 |
+      b'4. a8 |
+      g4 \bar "|."
+    }
+    {
+      g4 fs8 fs |
+      e d4 c8 |
+      d4. c8 |
+      b4
     }
   >>
 }
@@ -183,30 +249,73 @@ nhacPhanBa = \relative c'' {
 loiPhanMot = \lyricmode {
   <<
     {
-      \set stanza = "1.a."
-      Trời xanh tường thuật vinh hiển Chúa,
-      Không trung loan báo việc tay Ngài.
-      Ngày này kể lại cho ngày tới,
-      đêm này truyền tụng cho đêm kia.
+      \set stanza = "1."
+      Mệnh lệnh Cháu thiện toàn, bồi dưỡng hồn vía,
+      Thánh chỉ Ngài vững bền giúp ta học khôn.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
-	    \set stanza = "b."
+	    \set stanza = "2."
       \override Lyrics.LyricText.font-shape = #'italic
-      Chẳng nghe một lời hay một tiếng,
-      tai đâu nghe thấy một âm nào,
-      mà nay sứ điệp vang dội khắp,
-      thấu đạt tận cùng cả dương gian.
+      Lề luật Chúa chân thực sảng khoái lòng trí,
+      Huấn lệnh Ngài sáng ngời chiếu soi thị quan.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "3."
+      Lòng sợ Chúa thanh vẹn bền vững ngàn kiếp,
+      Phán định Ngài xác thực mãi luôn thẳng ngay.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "4."
+      \override Lyrics.LyricText.font-shape = #'italic
+      Thực là quý hơn vàng, vàng khối thuần chất,
+      giống như mật thắm ngọt tiết tự tàng ong.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "5."
+      Này đầy tớ của Ngài đà gắng ohjc kỹ,
+      bởi trung thành giữ gìn, ích lợi ngàn muôn.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "6."
+      \override Lyrics.LyricText.font-shape = #'italic
+      Mà nào có ai tường được hết lầm lỗi,
+      nếu đôi lần lỡ phạm, xin Ngài niệm tha.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "7."
+      Ngài gìn giữ con đừng tự kiêu tự đắc,
+      tránh khỏi lầm lỗi ngày sẽ thanh vẹn luôn.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "8."
+      \override Lyrics.LyricText.font-shape = #'italic
+      Lời miệng lưỡi con nài vọng thấu về Chúa,
+      Chúa vui lòng chấp nhận, cứu độ hồn con.
     }
   >>
 }
 
 loiPhanHai = \lyricmode {
-  Trời xanh tường thuật vinh quang của Chúa.
+  Lời Chúa là thần trí và là sự sống.
 }
 
 loiPhanBa = \lyricmode {
-  Tiếng các ngài đã vang dội khắp địa cầu.
+  Giới răn của Chúa chính trực làm hoan lạc tâm can.
+}
+
+loiPhanBon = \lyricmode {
+  Phán quyết của Chúa chân thực, hết thảy đều công minh.
+}
+
+loiPhanNam = \lyricmode {
+  Lạy Chúa, Chúa có lời ban sự sống muôn đời.
 }
 
 % Dàn trang
@@ -232,19 +341,24 @@ loiPhanBa = \lyricmode {
     \column {
       \left-align {
         \line { \bold \small "Sử dụng:" }
+        \line { \small "-t7 l /1TN: câu 1, 2, 3, 8 + Đ.1" }
+        \line { \small "-Cn C /3TN: câu 1, 2, 3, 8 + Đ.1" }
+        \line { \small "-t2 c /7TN: câu 1, 2, 3, 8 + Đ.1" }
+        \line { \small "-t7 l /8TN: câu 1, 2, 3, 4 + Đ.2" }
+        \line { \small "-t5 c /13TN: câu 1, 2, 3, 4 + Đ.2" }
+        \line { \small "-t6 l /16TN: câu 1, 2, 3, 5  Đ.1" }
+        \line { \small "-Cn B /26TN: câu 1, 2, 5, 6, 7 + Đ.2" }
       }
     }
     \column {
       \left-align {
-        \line { \small "-t3 l /28TN: cả 2 câu + Đ.2" }
-        \line { \small "-t6 l /32TN: cả 2 câu + Đ.1" }
-        \line { \small "-lễ t.Tông Đồ: cả 2 câu + Đ.2" }
-      }
-    }
-    \column {
-      \left-align {
-        \line { \small "-lễ vọng T.Phêrô & Phaolô: cả 2 câu + Đ.2" }
-        \line { \small "-Rao giảng Tin Mừng: cả 2 câu + Đ.2" }
+        \line { \small "-t5 l /26TN: câu 1, 2, 3, 4 + Đ.2" }
+        \line { \small "-t2 /1MC: câu 1, 2, 3, 4 + Đ.1" }
+        \line { \small "-Cn B /3MC: câu 1, 2, 3, 4 + Đ.4" }
+        \line { \small "-Vọng PS: câu 1, 2, 3, 4 + Đ.4" }
+        \line { \small "-T.Tiến sĩ: câu 1, 2, 3, 4 + Đ.1 hoặc Đ.2" }
+        \line { \small "-Nt trao kinh Tin kính: như trên" }
+        \line { \small "-khi tĩnh tâm: câu 1, 2, 3, 4 + Đ.4" }
       }
     }
   %}
@@ -261,9 +375,10 @@ loiPhanBa = \lyricmode {
     >>
   >>
   \layout {
-    \override Lyrics.LyricSpace.minimum-distance = #0.5
+    \override Lyrics.LyricSpace.minimum-distance = #1
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
+    ragged-last = ##f
   }
 }
 
@@ -281,8 +396,7 @@ loiPhanBa = \lyricmode {
   >>
   \layout {
     indent = 10
-    \override Staff.TimeSignature.transparent = ##t
-    \override Lyrics.LyricSpace.minimum-distance = #0.8
+    \override Lyrics.LyricSpace.minimum-distance = #1.5
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
     ragged-last = ##f
@@ -303,10 +417,52 @@ loiPhanBa = \lyricmode {
   >>
   \layout {
     indent = 10
-    \override Staff.TimeSignature.transparent = ##t
-    \override Lyrics.LyricSpace.minimum-distance = #1
+    \override Lyrics.LyricSpace.minimum-distance = #0.6
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
     ragged-last = ##f
   }
 }
+
+\score {
+  <<
+    \new Staff \with {
+      \remove "Time_signature_engraver"
+      instrumentName = \markup { \bold "Đ.3" }} <<
+        \clef treble
+        \new Voice = beSop {
+          \nhacPhanBon
+        }
+      \new Lyrics \lyricsto beSop \loiPhanBon
+    >>
+  >>
+  \layout {
+    indent = 10
+    \override Lyrics.LyricSpace.minimum-distance = #0.6
+    \override Score.BarNumber.break-visibility = ##(#f #f #f)
+    \override Score.SpacingSpanner.uniform-stretching = ##t
+    ragged-last = ##f
+  }
+}
+
+\score {
+  <<
+    \new Staff \with {
+      \remove "Time_signature_engraver"
+      instrumentName = \markup { \bold "Đ.4" }} <<
+        \clef treble
+        \new Voice = beSop {
+          \nhacPhanNam
+        }
+      \new Lyrics \lyricsto beSop \loiPhanNam
+    >>
+  >>
+  \layout {
+    indent = 10
+    \override Lyrics.LyricSpace.minimum-distance = #0.6
+    \override Score.BarNumber.break-visibility = ##(#f #f #f)
+    \override Score.SpacingSpanner.uniform-stretching = ##t
+    ragged-last = ##f
+  }
+}
+
