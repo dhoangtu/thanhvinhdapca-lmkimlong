@@ -565,7 +565,7 @@ rm *.ly~
 done
 
 
-git config --global core.sshCommand "'C:\\Program Files\\Git\\usr\\bin\\ssh.exe'"
+git config --global core.sshCommand "'C:\\data\\install\\Git\\usr\\bin\\ssh.exe'"
 git config core.sshCommand "'C:\\Program Files\\Git\\usr\\bin\\ssh.exe' -i C:/Home/.ssh/id_rsa_name"
 
 git config --global core.sshCommand "'C:\\data\\install\\Git\\usr\\bin\\ssh.exe'"
