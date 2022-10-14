@@ -105,71 +105,66 @@ stanzaReminderOn = \undo \stanzaReminderOff
 % kết thúc mã nguồn
 
 % Nhạc
-nhacPhanMot = \relative c' {
+nhacPhanMot = \relative c'' {
   \key c \major
   \time 2/4
-  \partial 4. e8 c f |
-  f4. d8 |
-  a' a fs4 |
-  g8 c a a16 (c) |
-  d2 ~ |
-  d8 c c c |
-  e (d16 c) e,8 g |
-  a4. g8 |
-  d f e (d) |
-  c2 ~ |
-  c8 r \bar "||"
+  c8 b16 (c) d8 c |
+  g4 e8 f |
+  g a d,16 (f) e8 |
+  c2 |
+  c8 g' a (g) |
+  e4. c'8 |
+  %\once \slurDashed
+  \once \phrasingSlurDashed
+  b \(c\) d (e) |
+  d2 |
+  b8. c16 b8 e, |
+  a a r d, |
+  f f g b, |
+  c4 \bar "||"
 }
 
-nhacPhanHai = \relative c'' {
+nhacPhanHai = \relative c' {
   \key c \major
   \time 2/4
-  \partial 4.
+  \partial 4
+  c8 (d) |
+  e4. e8 |
+  e f d c |
   <<
     {
-      c8 e, a |
+      g'4 a8 b |
+      c2 \bar "|."
+    }
+    {
+      b,4 d8 d |
+      e2
+    }
+  >>
+}
+
+nhacPhanBa = \relative c'' {
+  \key c \major
+  \time 2/4
+  \partial 4
+  g8 g |
+  c, (d)
+  <<
+    {
+      e d |
+      g4 e8 e |
       a4. g8 |
-      d' d b4 |
+      d' c b4 |
       c2 ~ |
-      c8 \bar "|."
+      c4 r \bar "|."
     }
     {
-      e,8 c f |
+      c,8 c |
+      b4 c8 c |
       f4. e8 |
-      f f g4 |
+      f fs g4 |
       e2 ~ |
-      e8
-    }
-  >>
-}
-
-nhacPhanBa = \relative c' {
-  \key c \major
-  \time 2/4
-  \partial 4. e8 c f |
-  f4. d8 |
-  <a' c,>8 <a c,>
-  <<
-    {
-      \voiceOne
-      fs4
-    }
-    \new Voice = "splitpart" {
-      \voiceTwo
-      d8 (c)
-    }
-  >>
-  \oneVoice
-  <<
-    {
-      g'8 c b b |
-      c2 ~ |
-      c8 \bar "|."
-    }
-    {
-      b,8 a d d |
-      e2 ~ |
-      e8
+      e4 r
     }
   >>
 }
@@ -178,54 +173,44 @@ nhacPhanBon = \relative c' {
   \key c \major
   \time 2/4
   \partial 4
+  c8 (d) |
+  e4. e8 |
+  d (
   <<
     {
-      e8 (g) |
-      a4. g8 |
-      d g
+      e) g a |
+      a2 |
+      a8 a g (a) |
+      c2 ~ |
+      c4 r \bar "|."
     }
     {
-      c,8 (e) |
-      f4. c8 |
-      b b
+      c,8) e f |
+      f2 |
+      f8 f e (d) |
+      e2 ~ |
+      e4 r
     }
   >>
-  <<
-    {
-      \voiceOne
-      e8 (d)
-    }
-    \new Voice = "splitpart" {
-      \voiceTwo
-      b4
-    }
-  >>
-  \oneVoice
-  c2 ~ |
-  c8 \bar "|."
 }
 
 nhacPhanNam = \relative c' {
   \key c \major
   \time 2/4
-  \partial 4 e8 e |
-  c8. f16 d8
+  \partial 4
+  c8 (d) |
+  e8. e16 f8 d |
+  g4.
   <<
     {
-      d8 |
-      g8. g16 e8 e |
-      a4. a8 |
-      g d'4 c8 |
-      c2 ~ |
-      c8 \bar "|."
+      a8 |
+      g g a (b) |
+      c2 \bar "|."
     }
     {
-      c,8 |
-      b8. b16 c8 c |
-      f4. f8 |
-      e f4 e8 |
-      e2 ~ |
-      e8
+      f,8 |
+      e e f (d) |
+      e2
     }
   >>
 }
@@ -233,66 +218,44 @@ nhacPhanNam = \relative c' {
 nhacPhanSau = \relative c' {
   \key c \major
   \time 2/4
-  \partial 4 r8 c |
-  c8. e16 f8 e |
-  d4.
+  \partial 4
+  e8 (g) |
+  a4 r8
   <<
     {
-      d8 |
-      d d
+      c8 |
+      c d c a |
+      b2 |
+      r8
     }
     {
-      c |
-      b b
+      a |
+      a b a f |
+      e2 |
+      r8
     }
   >>
   <<
     {
       \voiceOne
-      g'8 e16 (g)
+      b'16 (d)
     }
     \new Voice = "splitpart" {
       \voiceTwo
-      b,8 c
+      gs,8
     }
   >>
   \oneVoice
   <<
     {
-      a'4. b8 |
-      g4 a |
+      c8 c |
       c2 ~ |
-      c8 \bar "|."
+      c4 r \bar "|."
     }
     {
-      f,4. g8 |
-      e4 f |
+      a8 f |
       e2 ~ |
-      e8
-    }
-  >>
-}
-
-nhacPhanBay = \relative c'' {
-  \key c \major
-  \time 2/4
-  \partial 4 r8
-  <<
-    {
-      g8 |
-      e f g4 |
-      g r8 g |
-      d' d b4 |
-      c2 ~ |
-      c8 \bar "|."
-    }
-    {
-      e,8 |
-      c d c4 |
-      b r8 c |
-      f f g4 |
-      e2 ~ |
-      e8
+      e4 r
     }
   >>
 }
@@ -333,7 +296,7 @@ loiPhanMot = \lyricmode {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "5."
       Muôn lạy Chúa con thờ, này hồn con phó ở tay Ngài.
-      Ngài đã cứ chuộc bởi Ngài tín trung.
+      Ngài đã cứ chuộc bởi Ngài _ tín trung.
       Thân khốn nguy Ngài thương xem, lòng con khôn xiết mừng vui.
     }
     \new Lyrics {
@@ -341,14 +304,14 @@ loiPhanMot = \lyricmode {
 	    \set stanza = "6."
       \override Lyrics.LyricText.font-shape = #'italic
       Muôn lạy Chúa con thờ, này hồn con phó ở tay Ngài.
-      Ngài đã cứ chuộc bởi Ngài tín trung.
+      Ngài đã cứ chuộc bởi Ngài _ tín trung.
       Con vững tin Ngài khôn ngơi, lòng con khôn xiết mừng vui.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "7."
       Xin nhìn đến con này, phận lầm than Chúa đã am tường,
-      và không phó mặc cho bọn ác nhân.
+      và không phó mặc cho bọn _ ác nhân.
       Trên lối đi rộng thênh thang dìu con đưa bước thảnh thơi.
     }
     \new Lyrics {
@@ -356,14 +319,14 @@ loiPhanMot = \lyricmode {
 	    \set stanza = "8."
       \override Lyrics.LyricText.font-shape = #'italic
       Con bị lũ quân thù, bạn bè thân thích thày chê cười,
-      vừa khi ngó mặt kinh tởm tránh xa,
+      vừa khi ngó mặt kinh tởm _ tránh xa,
       quên lãng như một thây mà, và coi như thứ bỏ đi.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "9."
       Bao kẻ đã buông lời độc địa cay đắng rủa thân này,
-      nhìn quanh tứ bề bao điều khiếp kinh.
+      nhìn quanh tứ bề bao điều _ khiếp kinh.
       Bao lũ toa rập bên con, và mưu toan lấy mạng con.
     }
     \new Lyrics {
@@ -377,8 +340,8 @@ loiPhanMot = \lyricmode {
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "11."
-      Xin tỏa thánh nhan Ngài và dủ thương kẻ tôi đòi,
-      chở che kỹ càng luôn ở Thánh Nhan.
+      Xin tỏa thánh nhan Ngài và dủ thương cứu kẻ tôi đòi,
+      chở che kỹ càng luôn ở _ Thánh Nhan.
       Cho thoát trăm ngàn mưu mô phàm nhân toan tính bày ra.
     }
     \new Lyrics {
@@ -386,14 +349,14 @@ loiPhanMot = \lyricmode {
 	    \set stanza = "12."
       \override Lyrics.LyricText.font-shape = #'italic
       Xin tỏa thánh nhan Ngài và dủ thương cứu kẻ tôi đòi,
-      nào ai vững lòng trông cậy Chúa liên.
+      nào ai vững lòng trông cậy _ Chúa liên.
       May hãy can trường thêm lên, và luôn luôn vững mạnh thêm.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "13."
       Ôi lòng Chúa nhân hậu, trọng đại thay,
-      Chúa để cho người thành tâm vững lòng tôn sợ Chúa luôn.
+      Chúa để cho người thành tâm vững lòng tôn sợ _ Chúa luôn.
       Thi thố ra cùng nhân gian, tặng ai bên Chúa ẩn thân.
     }
     \new Lyrics {
@@ -401,14 +364,14 @@ loiPhanMot = \lyricmode {
 	    \set stanza = "14."
       \override Lyrics.LyricText.font-shape = #'italic
       Xin ẩn giấu kỹ càn, đặt họ nương náu ở nhan Ngài,
-      khỏi mưu ám hại bao kẻ ác tâm.
+      khỏi mưu ám hại bao kẻ _ ác tâm.
       Che chở trong lều cao sang, biệt xa bao tiếng thị phi.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "15."
       Ca tụng Chúa nhân từ, đà rộng bạn phúc cả trong thành,
-      dù khi khiếp sợ, con đã thốt lên:
+      dù khi khiếp sợ, con đã _ thốt lên:
       Ôi Chúa xua khỏi Tôn nhan, Ngày con kêu Chúa đà nghe.
     }
     \new Lyrics {
@@ -416,7 +379,7 @@ loiPhanMot = \lyricmode {
 	    \set stanza = "16."
       \override Lyrics.LyricText.font-shape = #'italic
       Mau hãy mến yêu Ngài, mọi kẻ trung hiếu ở trên đời.
-      Ngài luôn giữ gìn bao kẻ tín trung.
+      Ngài luôn giữ gìn bao kẻ _ tín trung.
       Nhưng với ai lòng kiêu căng, Ngài luôn truy oán thẳng tay.
     }
   >>
@@ -457,7 +420,7 @@ loiPhanSau = \lyricmode {
 			       (/ 20 20)))
   print-page-number = ##f
   ragged-bottom = ##t
-  %page-count = 2
+  page-count = 3
 }
 
 \markup {
@@ -539,7 +502,7 @@ loiPhanSau = \lyricmode {
   >>
   \layout {
     indent = 10
-    \override Lyrics.LyricSpace.minimum-distance = #0.6
+    \override Lyrics.LyricSpace.minimum-distance = #0.45
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
     ragged-last = ##f
