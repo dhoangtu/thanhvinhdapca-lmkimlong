@@ -105,159 +105,192 @@ stanzaReminderOn = \undo \stanzaReminderOff
 % kết thúc mã nguồn
 
 % Nhạc
-nhacPhanMot = \relative c'' {
+nhacPhanMot = \relative c' {
   \key c \major
   \time 2/4
-  c8 b16 (c) d8 c |
-  g4 e8 f |
-  g a d,16 (f) e8 |
-  c2 |
-  c8 g' a (g) |
-  e4. c'8 |
-  %\once \slurDashed
-  \once \phrasingSlurDashed
-  b \(c\) d (e) |
-  d2 |
-  b8. c16 b8 e, |
-  a a r d, |
-  f f g b, |
+  \partial 4 c8 d |
+  e f16 e d8 e16 (g) |
+  a4 f8 e16 (f) |
+  e8. e16 \grace {a16 (} c8) d,16 (f) |
+  g4 g8 bf |
+  c8. a16
+  \once \phrasingSlurDashed a \(g\) c8 |
+  f,4 e8 g |
+  d d16 d g8 b, |
   c4 \bar "||"
 }
 
-nhacPhanHai = \relative c' {
+nhacPhanHai = \relative c'' {
   \key c \major
   \time 2/4
-  \partial 4
-  c8 (d) |
-  e4. e8 |
-  e f d c |
-  <<
-    {
-      g'4 a8 b |
-      c2 \bar "|."
-    }
-    {
-      b,4 d8 d |
-      e2
-    }
-  >>
-}
-
-nhacPhanBa = \relative c'' {
-  \key c \major
-  \time 2/4
-  \partial 4
-  g8 g |
-  c, (d)
-  <<
-    {
-      e d |
-      g4 e8 e |
-      a4. g8 |
-      d' c b4 |
-      c2 ~ |
-      c4 r \bar "|."
-    }
-    {
-      c,8 c |
-      b4 c8 c |
-      f4. e8 |
-      f fs g4 |
-      e2 ~ |
-      e4 r
-    }
-  >>
-}
-
-nhacPhanBon = \relative c' {
-  \key c \major
-  \time 2/4
-  \partial 4
-  c8 (d) |
-  e4. e8 |
-  d (
-  <<
-    {
-      e) g a |
-      a2 |
-      a8 a g (a) |
-      c2 ~ |
-      c4 r \bar "|."
-    }
-    {
-      c,8) e f |
-      f2 |
-      f8 f e (d) |
-      e2 ~ |
-      e4 r
-    }
-  >>
-}
-
-nhacPhanNam = \relative c' {
-  \key c \major
-  \time 2/4
-  \partial 4
-  c8 (d) |
-  e8. e16 f8 d |
-  g4.
-  <<
-    {
-      a8 |
-      g g a (b) |
-      c2 \bar "|."
-    }
-    {
-      f,8 |
-      e e f (d) |
-      e2
-    }
-  >>
-}
-
-nhacPhanSau = \relative c' {
-  \key c \major
-  \time 2/4
-  \partial 4
-  e8 (g) |
-  a4 r8
-  <<
-    {
-      c8 |
-      c d c a |
-      b2 |
-      r8
-    }
-    {
-      a |
-      a b a f |
-      e2 |
-      r8
-    }
-  >>
+  \partial 4 c4 |
+  a4.
   <<
     {
       \voiceOne
-      b'16 (d)
+      a16 (c)
     }
     \new Voice = "splitpart" {
       \voiceTwo
-      gs,8
+      f,8
     }
   >>
   \oneVoice
   <<
     {
-      c8 c |
-      c2 ~ |
-      c4 r \bar "|."
+      g4. a8 |
+      d, d
     }
     {
-      a8 f |
-      e2 ~ |
-      e4 r
+      e4. c8 |
+      b b
     }
   >>
+  <<
+    {
+      \voiceOne
+      d8 (g)
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      b,4
+    }
+  >>
+  \oneVoice
+  c4 \bar "|."
+}
+
+nhacPhanBa = \relative c' {
+  \key c \major
+  \time 2/4
+  \partial 4 c8 d |
+  e4
+  <<
+    {
+      d8 e |
+      d4. g8 |
+      a2 |
+      c8 c c a |
+      g4
+    }
+    {
+      d8 c |
+      b4. c8 |
+      f2 |
+      a8 a a f |
+      e4
+    }
+  >>
+  <<
+    {
+      \voiceOne
+      e16 (d) g8
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      c,8 c
+    }
+  >>
+  \oneVoice
+  c4 \bar "|."
+}
+
+nhacPhanBon = \relative c'' {
+  \key c \major
+  \time 2/4
+  \partial 4 r8
+  <<
+    {
+      g8 |
+      e (g) a4 ~ |
+      a8 f f g |
+      d4.
+    }
+    {
+      e8 |
+      c (e) f4 ~ |
+      f8 d d c |
+      b4.
+    }
+  >>
+  <<
+    {
+      \voiceOne
+      e16 (d)
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      b8
+    }
+  >>
+  \oneVoice
+  c4 \bar "|."
+}
+
+nhacPhanNam = \relative c' {
+  \key c \major
+  \time 2/4
+  \partial 4 c8 (d) |
+  e4. e8 |
+  <<
+    {
+      f8 d e g |
+      a4 a8 c |
+      g4 g8 a |
+      f4. d8 |
+      f g
+    }
+    {
+      d8 b c e |
+      f4 f8 a |
+      e4 e8 f |
+      d4. c8 |
+      b b
+    }
+  >>
+  <<
+    {
+      \voiceOne
+      e8 (d)
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      b4
+    }
+  >>
+  \oneVoice
+  c2 ~ |
+  c4 \bar "|."
+}
+
+nhacPhanSau = \relative c' {
+  \key c \major
+  \time 2/4
+  <<
+    {
+      \partial 4 e8 g |
+      a4. d,8 |
+      d g
+    }
+    {
+      c,8 e |
+      f4. a,8 |
+      b b
+    }
+  >>
+  <<
+    {
+      \voiceOne
+      e8 (d)
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      b4
+    }
+  >>
+  \oneVoice
+  c2 ~ |
+  c4 \bar "|."
 }
 
 % Lời
@@ -265,112 +298,162 @@ loiPhanMot = \lyricmode {
   <<
     {
       \set stanza = "1."
-      
+      Người công chính hãy reo hò mừng Chúa,
+      kẻ ngay lành hợp tiếng ngợi khen.
+      Tạ ơn Chúa gieo muôn _ tiếng đàn,
+      ngợi khen Ngài gảy đàn sắt, đàn tơ.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "2."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Người công chính hãy reo hò mừng Chúa,
+      kẻ ngay lành hợp tiếng ngợi khen.
+      Thật vinh phúc dân tin _ kính Ngài,
+      và nước là sản nghiệp Chúa chọn riêng.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "3."
-      
+      Ngợi khen Chúa với muôn điệu đàn sắt,
+      Tạ ơn Ngài nào tấu nhạc lên,
+      Bài ca mới dâng lên _ kính Ngài,
+      nhạc vang lừng hòa cùng tiếng hò reo.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "4."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Lời Thiên Chúa rất ngay thực chân chính,
+      việc tay Ngài thực đáng cậy tin,
+      Ngài yêu thích công minh _ chính trực,
+      tình thương ngài tràn ngập khắp mọi nơi.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "5."
-      
+      Lời Thiên Chúa khiến cung trời hiện hữu,
+      làn hơi Ngài tạo tác ngàn sao.
+      Và đại dương thu gom _ nhất lại,
+      cùng thủy triều Ngài dồn trữ vào kho.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "6."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Lời Thiên Chúa khiến cung trời hiện hữu,
+      làn hơi Ngài tạo tác ngàn sao,
+      Ngài tuyên phán khai sinh _ các loài,
+      Ngài ra lệnh vạn vật xuất hiện ngay.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "7."
-      
+      Toàn cõi đất hãy tôn phục Thiên Chúa,
+      và muôn người sợ hãi quyền uy.
+      Ngài tuyên phán khai sinh _ các loài,
+      Ngài ra lệnh vạn vật xuất hiện ngay.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "8."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Ngài thay đổi các chương trình vạn quốc,
+      dẹp tan mọi dự tính ngàn dân.
+      Định cương Chúa muôn năm _ vững bền,
+      và kế hoạch Ngài vạn kiếp còn nguyên.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "9."
-      
+      Định cương Chúa đến muôn đời bền vững,
+      và kế hoạch vạn kiếp còn  nguyên.
+      Thật vinh phúc dân tin _ kính Ngài,
+      và nước là sản nghiệp Chúa chọn riêng.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "10."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Thật vinh phúc quốc gia nào nhận Chúa
+      và dân nào được Chúa chọn riêng.
+      Từ thiên quốc cao sang _ Chúa ngự,
+      và trông chừng mọi người khắp trần gian.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "11."
-      
+      Từ thiên quốc Chúa uy quyền ngự lãm,
+      và am tường người thế mọi nơi.
+      Ngài tạo tác muôn muôn _ cõi lòng,
+      việc chúng làm Ngài hằng thấu triệt luôn.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "12."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Ngài đưa mắt dõi theo kẻ thờ kính,
+      kẻ tin cậy lòng Chúa dủ thương.
+      Hầu giải cứu qua tay _ tử thần,
+      hồi cơ hàn Ngài nhìn tới dưỡng nuôi.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "13."
-      
+      Ngài đưa mắt dõi theo kẻ thờ kính,
+      kẻ tin cậy lòng Chúa dủ thương.
+      Vì vua thắng đâu do quân quốc nhiều,
+      kẻ thoát nạn nào nhờ dũng lực đâu.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "14."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Đoàn con những vững tâm đợi trông Chúa,
+      bởi Chúa hằng phù giúp chở che.
+      Vì nơi Chúa hân hoan _ cõi lòng,
+      và Danh Ngài là cùng đích đợi trông.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "15."
-      
+      Thật vinh phúc quốc gia nào nhận Chúa,
+      và dân nào được Chúa chọn riêng.
+      Hồng ân Chúa xin thương _ xuống đầy
+      trên những người hằng bền vững cậy trông.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "16."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Đoàn con những vững tâm đợi trông Chúa,
+      bởi Chúa hằng phù giúp chở che.
+      Hồng ân Chúa xin thương _ xuống đầy
+      trên những người hằng bền vững cậy trông.
     }
   >>
 }
 
 loiPhanHai = \lyricmode {
-  
+  Phúc thay quốc gia Chúa chọn làm gia nghiệp.
 }
 
 loiPhanBa = \lyricmode {
-  
+  Người công chính hãy reo mừng trong Chúa,
+  hãy hát khúc tân ca dâng kính Ngài.
 }
 
 loiPhanBon = \lyricmode {
-  
+  Do lời Chúa mà trời xanh được tác thành.
 }
 
 loiPhanNam = \lyricmode {
-  
+  Lạy Chúa, xin tỏ lượng từ bi Chúa cho chúng con
+  như chúng con hằng cậy trông nơi Ngài.
 }
 
 loiPhanSau = \lyricmode {
-  
+  Tình thương Chúa tràn ngập khắp địa cầu.
 }
 
 % Dàn trang
@@ -388,7 +471,6 @@ loiPhanSau = \lyricmode {
 			       (/ 20 20)))
   print-page-number = ##f
   ragged-bottom = ##t
-  page-count = 3
 }
 
 \markup {
