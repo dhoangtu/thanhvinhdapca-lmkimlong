@@ -21,7 +21,6 @@ Nhược điểm của Lilypond:
 Frescobaldi
 
 
-
 ===
 Bỏ ký hiệu Số Chỉ Nhịp
 \score {
