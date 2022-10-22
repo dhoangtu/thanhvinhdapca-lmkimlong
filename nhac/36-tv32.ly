@@ -494,6 +494,7 @@ loiPhanSau = \lyricmode {
     }
     \column {
       \left-align {
+        \line { \small " " }
         \line { \small "-t6 c /21TN: câu 1, 3, 8 + Đ.5" }
         \line { \small "-t7 c /21TN: câu 10, 12, 14 + Đ.1" }
         \line { \small "-t4 c /22TN: câu 10, 11, 14 + Đ.1" }
@@ -505,7 +506,6 @@ loiPhanSau = \lyricmode {
         \line { \small "-khấn dòng: 3, 4, 9, 12, 14 + Đ.1" }
         \line { \small "-Thánh Tâm (NL): 1, 4, 9, 12, 14 + Đ.5" }
         \line { \small "-lễ Hôn Phối: câu 10, 14, 16 + Đ.5" }
-        \line { \small "-" }
       }
     }
   %}
