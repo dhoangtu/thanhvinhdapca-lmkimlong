@@ -106,87 +106,74 @@ stanzaReminderOn = \undo \stanzaReminderOff
 
 % Nhạc
 nhacPhanMot = \relative c'' {
-  \key f \major
+  \key bf \major
   \time 2/4
-  \partial 8 c8 |
-  a (g) f (g) |
-  a4 \tuplet 3/2 { d,8 d df } |
-  c4 r8 c16 f |
-  e8 f g a |
-  a4 \tuplet 3/2 { f8 bf a } |
-  g2 ~ |
-  g4 r8 f \break
-  bf4. bf16 bf |
-  bf8 g4 bf8 |
-  c4 r8 g |
-  g c a (g) |
-  f (e) d g |
-  e4 r8 \bar "||"
+  \partial 4 \tuplet 3/2 { g8 f g } |
+  ef4. g8 |
+  d4. bf16 d |
+  ef4 r8 d |
+  c4 \grace { g'16 (} \tuplet 3/2 { a8) fs g } |
+  g4 \tuplet 3/2 { d'8 c d } |
+  bf4. d16 g, |
+  a4 \tuplet 3/2 { g8 a a } |
+  fs4. fs16 d |
+  g4 \tuplet 3/2 { g8 bf c } |
+  d4 r8 \bar "||"
 }
 
-nhacPhanHai = \relative c'' {
-  \key f \major
+nhacPhanHai = \relative c' {
+  \key bf \major
   \time 2/4
-  \partial 8 a8 |
-  d, (e)
+  \partial 8 d8 |
+  g4 \tuplet 3/2 { bf,8 c c } |
+  d4. d8 |
   <<
     {
-      f (g) |
-      a4. f8 |
-      bf8. g16 g8 c
+      a'4. bf16 a |
+      g4 \bar "|."
     }
     {
-      d,8 (e) |
-      f4. ef8 |
-      d8. d16 e8 e
+      c,4. d16 d |
+      bf4
     }
   >>
-  f2 ~ |
-  f4 r8 \bar "|."
 }
 
 nhacPhanBa = \relative c' {
-  \key f \major
+  \key bf \major
   \time 2/4
-  \partial 4 c4 |
-  d8 (e) f8 (
+  \partial 8 d8 |
   <<
     {
-      g) |
-      a4. c8 |
-      e,4 g8 f |
-      f2 ~ |
-      f4 r8 \bar "|."
+      bf'4. a16 a |
+      a8 d d fs, |
+      g2 ~ |
+      g4 \bar "|."
     }
     {
-      e) |
-      f4. f8 |
-      c4 bf8 bf |
-      a2 ~ |
-      a4 r8
+      g4. g16 g |
+      fs8 g d d |
+      bf2 ~ |
+      bf4
     }
   >>
 }
 
 nhacPhanBon = \relative c'' {
-  \key f \major
+  \key bf \major
   \time 2/4
-  \partial 8 a16 a |
-  a8 f f
+  \partial 8 g16 g |
+  f4 \tuplet 3/2 { a8 d d } |
   <<
     {
-      a8 |
-      bf4. c8 |
-      e,4 g8 f |
-      f2 ~ |
-      f4 r8 \bar "|."
+      bf4. d8 |
+      f, a4 g8 |
+      g4 \bar "|."
     }
     {
-      f8 |
-      d4. d8 |
-      c4 bf8 bf |
-      a2 ~ |
-      a4 r8
+      g4. g8 |
+      d c4 c8 |
+      bf4
     }
   >>
 }
@@ -196,94 +183,101 @@ loiPhanMot = \lyricmode {
   <<
     {
       \set stanza = "1."
-      Hãy tin tưởng Chúa và làm việc lành
-      thì sẽ được ở trong đất nước và sống khang an.
-      Bạn hãy lấy chính Chúa làm niềm vui,
-      thì Ngài sẽ cho bạn được thỏa lòng.
+      Tôi hằng trông đợi hết lòng ở nơi Chúa,
+      nên Ngài cúi mình nghe tôi,
+      Kéo tôi thoát khỏi hố diệt vong,
+      qua những vũng lầy, kiên cường đi, nhịp chân trên đá.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "2."
       \override Lyrics.LyricText.font-shape = #'italic
-      Hãy trao gửi Chúa đường đời của bạn,
-      và hãy trọn niềm tin kính Chúa,
-      Ngài sẽ ra tay.
-      Bạn sẽ sáng chính nghĩa tựa bình minh,
-      quyền lợi sẽ huy hoàng tựa chính ngọ.
+      Tôi hằng trông đợi hết lòng ở nơi Chúa,
+      nên Ngài cúi mình nghe tôi,
+      Khiến tôi mở miệng xướng bài ca,
+      xin hát kính Ngài,
+      Đây bài ca, một bài ca mới.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "3."
-      Chúa luôn hiểu thấu đời người thiện toàn,
-      và gia nghiệp họ tay Chúa giữu bền vững muôn năm.
-      Dù lúc mắc khốn khó chẳng hổ ngươi,
-      và họ sẽ no tỏa ngày đói nghèo.
+      Tôi hằng trông đợi hết lòng ở nơi Chúa,
+      nên Ngài cúi mình nghe tôi.
+      Vững tin Chúa Trời, phúc lộc thay,
+      Không dõi lối đường quân tàn hung và bọn kiêu hãnh.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "4."
       \override Lyrics.LyricText.font-shape = #'italic
-      Chúa luôn hiểu thấu đời người thiện toàn,
-      và gia nghiệp họ tay Chúa giữu bền vững muôn năm,
-      Ngài giúp khiến lối bước họ kiên vững,
-      vì Ngài vẫn ưa chuộng đường lối họ.
+      Chúa đâu thích gì phẩm vật và hy lễ,
+      nhưng Ngài đã mở tai tôi,
+      Chúa đâu có đòi lễ toàn thiêu hay lễ xá tội,
+      con liền thưa: Này con xin đến.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "5."
-      Chúa thương dìu dắt đường đời mọi người,
-      và ban trợ họ luôn vững bước,
-      và thỏa vui luôn.
-      Bởi thế dẫu có vấp chẳng gục ngã,
-      vì ngài nắm tay để dìu dắt họ.
+      Sách ghi rõ ràng những lời về con đó:
+      Con tìm ý Ngài vâng theo.
+      Kính thân Chúa Trời, Chúa của con,
+      bao huấn giới Ngài, đây lòng con hằng luôn ủ ấp.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "6."
       \override Lyrics.LyricText.font-shape = #'italic
-      Tránh xa điều dữ và làm việc lành,
-      bạn sẽ được ổn cư mãi mãi và sống an vui,
-      vì Chúa vẫn thích thú điều ngay chính,
-      chẳng hề bỏ rơi kẻ nào tín thành.
+      Đức công chính Ngài, khấn nguyện truyền rao mãi
+      trong ngày nhóm hội con dân.
+      Kính xin Chúa Trời chứng nhận cho,
+      vì Chúa biết rằng môi miệng con nào đâu im tiếng.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "7."
-      Tránh xa điều dữ và làm việc lành,
-      bạn sẽ được ổn cư mãi và sống an vui,
-      vì Chúa sẽ dẫn dắt người công chính
-      vào miền đất gia nghiệp ở suốt đời.
+      Đức công chính Ngài, lưỡi này từng loan báo,
+      không hề giữ để riêng con.
+      Kính xin Chúa hằng dủ tình thương,
+      Ơn phúc cứu độ, khi hội chung thực con không giấu.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "8."
       \override Lyrics.LyricText.font-shape = #'italic
-      Lưỡi luôn chỉ nói điều gì trọn lành
-      và môi miệng người công chính vẫn niệm lẽ khôn ngoan
-      Luật Chúa nhớ khắc mãi vào tâm trí,
-      từng nhịp bước không xiêu vẹo chút nào.
+      Kính xin Chúa Trời chớ đoạn tình âu yếm,
+      mong Ngài mãi cảm thương con,
+      Cúi xin Chúa hằng lấy tình thương
+      đem đức tín thành bao bọc con, chở che con mãi.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "9."
-      Chính nhân được Chúa phù trợ giữ gìn,
-      và cứu độ chở che những lúc gặp bước gian nan,
-      từng phút Chúa đáp cứu và giải thoát,
-      vì họ vẫn nương ẩn ở sát Ngài.
+      Ước chi những kẻ kiếm tìm thần nhan Chúa,
+      trong Ngài hãy mừng vui lên.
+      Ước chi những kẻ mến ảm ơn Thiên Chúa cứu độ,
+      xưng tụng luôn: Ngài cao sang quá.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "10."
+      Khiến con mở miệng tiến Ngài bài ca mới,
+      ai nhìn sẽ cậy tin luôn.
+      Đoái trông đến phận khốn cùng đây,
+      Ơn Chúa cứu độ xin giải nguy, đừng khoan hoãn nữa.
     }
   >>
 }
 
 loiPhanHai = \lyricmode {
-  Những người công chính được Chúa ban ơn cứu độ.
+  Lạy Chúa, này con xin đến thực thi thánh ý Ngài.
 }
 
 loiPhanBa = \lyricmode {
-  Miệng người công chính những niệm lẽ khôn ngoan.
+  Lạy Chúa, xin mau mau đến cứu độ con.
 }
 
 loiPhanBon = \lyricmode {
-  Hãy ký thác đường đời cho Chúa, chính Ngài sẽ ra tay.
+  Ta loan truyền Chúa đà chịu chết tới ngày Chúa quang lâm.
 }
 
 
@@ -310,17 +304,23 @@ loiPhanBon = \lyricmode {
     \column {
       \left-align {
         \line { \bold \small "Sử dụng:" }
-        \line { \small "-t6 l /3TN: câu 1, 3, 5, 9 + Đ.1" }
-        \line { \small "-t3 c /5TN: câu 2, 8, 9 + Đ.2" }
-        \line { \small "-t3 l /7TN: câu 1, 3, 6, 9 + Đ.3" }
+        \line { \small "-t4 c /1TN: câu 3, 4, 5, 6 + Đ.1" }
+        \line { \small "-Cn A /2TN: câu 2, 4, 5, 6 + Đ.1" }
+        \line { \small "-Cn B /2TN: câu 2, 4, 5, 6 + Đ.1" }
+        \line { \small "-t5 l /2TN: câu 4, 5, 6, 9 + Đ.1" }
+        \line { \small "-t3 l /3TN: câu 2, 4, 5, 6, 7 + Đ.1" }
+        \line { \small "-Cn c /20TN: câu 1, 10 + Đ.2" }
       }
     }
     \column {
       \left-align {
-        \line { \small "-t6 l /14TN: câu 1, 3, 6, 9 + Đ.1" }
-        \line { \small "-t6 c /22TN: câu 1, 2, 6, 9 + Đ.1" }
-        \line { \small "-t3 c /32TN: câu 1, 4, 7 + Đ.1" }
-        \line { \small "-T.Tiến sĩ: câu 1, 2, 8 + Đ.2" }
+        \line { \small " " }
+        \line { \small "-t5 l /20TN: câu 3, 4, 5, 6 + Đ.1" }
+        \line { \small "-t2 l /24TN: câu 4, 5, 6, 9 + Đ.3" }
+        \line { \small "-t3 l /29TN: câu 4, 5, 6, 9 + Đ.1" }
+        \line { \small "-lễ Truyền tin: câu 4, 5, 6 + Đ.1" }
+        \line { \small "-Khấn dòng-Ơn gọi: câu 2, 3, 5, 6, 8 + Đ.1" }
+        \line { \small "-Mình Máu Chúa (NL): câu 2, 3, 5, 6 + Đ.1" }
       }
     }
   %}
