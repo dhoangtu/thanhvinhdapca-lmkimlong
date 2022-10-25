@@ -219,7 +219,7 @@ loiPhanMot = \lyricmode {
       \override Lyrics.LyricText.font-shape = #'italic
       Dẫn chứng để tố cáo ngươi, dân tộc Ta hỡi,
       dòng giống Is -- ra -- el nghe lời dạy của Chúa mình:
-      Nyaf Ta đây chẳng trách phiền gì hy lễ của ngươi,
+      Này Ta đây chẳng trách phiền gì hy lễ của ngươi,
       lễ thiêu hằng thấy ở ngay trước mặt.
     }
     \new Lyrics {
