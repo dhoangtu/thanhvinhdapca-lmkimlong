@@ -3,7 +3,7 @@
 \include "english.ly"
 
 \header {
-  title = "Thánh Vịnh 71"
+  title = "Thánh Vịnh 77"
   composer = "Lm. Kim Long"
   tagline = ##f
 }
@@ -105,90 +105,62 @@ stanzaReminderOn = \undo \stanzaReminderOff
 % kết thúc mã nguồn
 
 % Nhạc
-nhacPhanMot = \relative c' {
-  \key f \major
+nhacPhanMot = \relative c'' {
+  \key g \major
   \time 2/4
-  \partial 4. f4 e8 |
-  a4. a16 a |
-  f8 bf a g |
-  g4. g16 g |
-  a8 g g d |
-  \grace { d16 ( } e2) ~ |
-  e8 f4
-  <<
-    {
-      \voiceOne
-      g8
-    }
-    \new Voice = "splitpart" {
-      \voiceTwo
-      \once \override NoteColumn.force-hshift = #1.5
-      \tweak font-size #-2
-      \parenthesize
-      f
-    }
-  >>
-  \oneVoice
-  g4. g16 g |
-  a8 a f e |
-  d4. d16 c |
-  c8 d g e |
-  f2 ~ |
-  f4 r \bar "||"
+  \partial 8 g16 g |
+  g4 \tuplet 3/2 { g8 g b } |
+  e,4. fs16 e |
+  d4 \tuplet 3/2 { fs8 g b } |
+  a2 ~ |
+  a4 r8 c16 c |
+  e4 \tuplet 3/2 { c8 a d } |
+  fs,4. e16 fs |
+  d4 \tuplet 3/2 { d8 a' fs } |
+  g2 ~ |
+  g4 \bar "||"
 }
 
-nhacPhanHai = \relative c' {
-  \key f \major
+nhacPhanHai = \relative c'' {
+  \key g \major
   \time 2/4
-  c8 c c (d) |
-  f8. e16
+  \partial 4 d8 b16 (a) |
+  e8 (g4)
   <<
     {
-      f8 g |
-      a2 |
-      g8 g g bf |
-      c4
+      b8 |
+      a4 a8 a |
+      c4. c8
     }
     {
-      d,8 e |
-      f2 |
-      e8 e e d |
-      e4
+      g8 |
+      fs4 fs8 fs |
+      e4. fs8
     }
   >>
-  <<
-    {
-      \voiceOne
-      g16 (a) g8
-    }
-    \new Voice = "splitpart" {
-      \voiceTwo
-      e8 e
-    }
-  >>
-  \oneVoice
-  f2 ~ |
-  f8 \bar "|."
+  g4 r8 \bar "|."
 }
 
-nhacPhanBa = \relative c' {
-  \key f \major
+nhacPhanBa = \relative c'' {
+  \key g \major
   \time 2/4
-  \partial 4 c4 |
+  \partial 4
   <<
     {
-      a'4. a8 |
-      a4 bf8 a |
-      g8. g16 g8 c
+      b8 a |
+      b4. a16 (g) |
+      e8 (d) a' b |
+      g2 ~ |
+      g4 r8 \bar "|."
     }
     {
-      f,4. f8 |
-      f4 g8 f |
-      e8. e16 e8 e
+      g8 fs |
+      g4. a16 (g) |
+      c,8 (b) c d |
+      b2 ~ |
+      b4 r8
     }
   >>
-  f2 ~ |
-  f8 \bar "|."
 }
 
 % Lời
@@ -196,83 +168,139 @@ loiPhanMot = \lyricmode {
   <<
     {
       \set stanza = "1."
-      Tâu Thượng Đế, xin ban quyền bính cho Tân vương,
-      trao công lý trong tay hoàng tử.
-      Để Tân vương theo công lý xét xử dân Ngài,
-      bênh quyền lợi kẻ khó nghèo luôn.
+      Muôn dân ơi nghe tôi giảng dạy,
+      lắng nghe lời miệng tôi nói đây.
+      Tôi tuyên bố đôi lời huấn dụ,
+      công bố điều huyền bí thuở xưa.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "2."
       \override Lyrics.LyricText.font-shape = #'italic
-      Nay đồi núi rước thái bình đến cho muôn dân
-      đem công lý cho bao dòng họ.
-      Người ra tay luôn bênh đỡ những kẻ cơ cùng,
-      ai nghèo hèn Người cứu độ cho.
+      Nghe cha ong xưa kia kể lại,
+      hãy loan truyền để con cháy hay:
+      Sự nghiệp Chúa bao là lẫy lừng,
+      tay Chúa từng làm những kỳ công.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "3."
-      Vương triều sẽ luôn đua nở thám hoa công minh,
-      thiên thu mãi an ninh thịnh trị.
-      Người \markup { \underline "quản" } cai
-      qua sống Cái đến tận địa cầu,
-      qua biển này và tới biển kia.
+      Cho mai sau luân phiên kể lại
+      để miêu duệ cậy tin Chúa luôn.
+      Không quên lãng bao việc Chúa làm,
+      luôn giữ trọn lệnh Chúa truyền ban.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "4."
       \override Lyrics.LyricText.font-shape = #'italic
-      Bao hoàng đế đến mãi từ Thác -- si, Xơ -- va,
-      hay nơi thẳm xa bao quần đảo,
-      Cùng vương công chen nhau bước tới tự Ả -- rập,
-      đem phẩm vật triều cống phục suy.
+      không noi theo cha ông ngỗ nghịch,
+      những lăng loàn và ngoan cố luôn.
+      Ôi tông giống tâm địa thất thường,
+      không tín thành, chẳng có thủy chung.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "5."
-      Ai nghèo khó khấn vái Ngài sẽ luôn thương nghe,
-      ra tay cứu con dân cùng khổ.
-      Chạnh \markup { \underline "lòng" } thương
-      ai nguy khốn, bé nhỏ, đơn hèn,
-      Dân bần cùng Người tế độ cho.
+      Khi manh tâm trêu ngươi Chúa Trời:
+      chúng đã đòi được ăn thỏa thuê.
+      Kêu than Chúa: nơi rừng vắng này,
+      liệu Chúa dọn được thức gì ăn?
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "6."
       \override Lyrics.LyricText.font-shape = #'italic
-      Thiên hạ sẽ tiến đến cầu khấn cho Tân vương,
-      xin vinh chúc Tân vương vạn thuở.
-      Người thương dân ra tay cứu thoát khỏi bạo tàn,
-      Coi trọng từng giọt máu họ luôn.
+      Mây cao xanh vâng theo Chúa truyền,
+      cánh cửa trời, Ngài đã hé ra,
+      man -- na rớt như là mưa rào:
+      nuôi dưỡng họ bằng bánh trời ban.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "7."
-      Danh Người sẽ chói sáng cùng thái dương lan xa,
-      qua muôn kiếp muôn năm trường cửu.
-      Nhờ Tôn Danh, muôn dân cõi thế được chúc lành,
-      thiện hạ cùng cầu phúc Người luôn.
+      Nhân gian nay no nê mãn nguyện,
+      bánh thiên thần rầy họ đã ăn.
+      Phụng lệnh Chúa, gió đông nổi dậy
+      tung sức Ngài gọi gió miền nam.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "8."
       \override Lyrics.LyricText.font-shape = #'italic
-      Xin mừng chúc Đức Cháu là Chúa Is -- ra -- en,
-      Uy công Chúa trăm muôn kỳ diệu,
-      Nguyện Tôn Danh luôn cao sáng đến mãi muôn đời,
-      Vinh hiển Ngài dọi khắp trần gian.
+      Nhân gian nay no nê mãn nguyện,
+      bánh thiên thần rầy họ đã ăn,
+      Đưa dân tới ống trong thánh địa,
+      Tay hữu Ngài dựng núi gầy non.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "9."
+      Chung quanh nơi dân đang trú ngụ
+      giữa doanh trại Ngài đã khiến cho
+      chim sa xuống như là cát biển,
+      Mưa trút thịt nhiều quá bụi tro.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "10."
+      \override Lyrics.LyricText.font-shape = #'italic
+      Khi nguy cơ sa tay Chúa phạt,
+      chúng trở lại vội tìm Chúa ngay,
+      và tưởng nhớ ơn Ngài cứu độ,
+      Xin Chúa Trời thành núi ẩn thân.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "11."
+      Dân điêu ngoa chuyên gian dối Ngài,
+      Lưỡi phỉnh phờ, lường gạt Chúa luôn.
+      Lòng dạ chúng chẳng hề tín thành,
+      GIa ước Ngài, nào có thực thi.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "12."
+      \override Lyrics.LyricText.font-shape = #'italic
+      Nhưng khoan dung, không tiêu hủy họ,
+      Chúa nhân từ dủ tình thứ tha,
+      và kiềm chế bao là oán hờn,
+      chẳng khơi bùng nộ khí Ngài lên.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "13."
+      Dân manh tâm trêu ngươi Chúa Trời,
+      Chẳng tuân hành lệnh Ngài đã ban:
+      như tiền bối xa lìa, phản bội,
+      thay đổi lòng tựa bắn lệch cung.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "14."
+      \override Lyrics.LyricText.font-shape = #'italic
+      Trên nơi cao, dân trêu tức Ngài:
+      Kính ngẫu tượng, làm Ngài phát ghen,
+      nên nay Chúa nổi bừng nghĩa nộ,
+      nghiêm khắc loại nhà Is -- ra -- el.
+    }
+    \new Lyrics {
+	    \set associatedVoice = "beSop"
+	    \set stanza = "15."
+      Trao vinh quang qua tay kẻ thù,
+      khiến chúng đoạt hòm bia thánh luôn,
+      bao chê chán dân Ngài đã chọn,
+      nên phó mặc họ dới làn gươm.
     }
   >>
 }
 
 loiPhanHai = \lyricmode {
-  Triều đại Người đua nở hoa công lý
-  và hòa bình viên mãn đến muôn đời.
+  Chúng tôi chẳng lãng quên mọi kỳ công Chúa làm.
 }
 
 loiPhanBa = \lyricmode {
-  Lạy Chúa, muôn dân khắp địa cầu cùng thờ kính Ngài.
+  Chúa ban bánh bởi trời nuôi dưỡng họ.
 }
 
 
@@ -299,19 +327,17 @@ loiPhanBa = \lyricmode {
     \column {
       \left-align {
         \line { \bold \small "Sử dụng:" }
-        \line { \small "-t3 /1MV: câu 1, 3, 5, 7 + Đ.1" }
-        \line { \small "-Cn A /2MV: câu 1, 2, 5, 7 + Đ.1" }
-        \line { \small "-ngày 17/12: câu 1, 5, 8 + Đ.1" }
-        \line { \small "-ngày 18/12: câu 1, 5, 8 + Đ.1" }
+        \line { \small "-t6 l /1TN: câu 2, 3, 4 + Đ.1" }
+        \line { \small "-t4 l /16TN: câu 5, 6, 7, 9 + Đ.2" }
+        \line { \small "-Cn B /18TN: câu 2, 6, 8 + Đ.2" }
       }
     }
     \column {
       \left-align {
-        \line { \small "-lễ Hiển linh: câu 1, 3, 5, 7 + Đ.2" }
-        \line { \small "-ngày 8/1: câu 1, 2, 3 + Đ.2" }
-        \line { \small "-ngày 9/1: câu 1, 4, 5 + Đ.2" }
-        \line { \small "-ngày 10/1: câu 1, 6, 7 + Đ.2" }
-        \line { \small "-cầu hòa bình: câu 1, 3, 5, 7 + Đ.1" }
+        \line { \small " " }
+        \line { \small "-t5 c /19TN: câu 13, 14, 15 + Đ.1" }
+        \line { \small "-suy tôn Thánh giá: câu 1, 10, 11, 12 + Đ.1" }
+        \line { \small "-Mình Máu Chúa (NL): câu 2, 6, 8 + Đ.2" }
       }
     }
   %}
