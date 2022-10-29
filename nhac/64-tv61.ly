@@ -3,7 +3,7 @@
 \include "english.ly"
 
 \header {
-  title = "Thánh Vịnh 56"
+  title = "Thánh Vịnh 61"
   composer = "Lm. Kim Long"
   tagline = ##f
 }
@@ -106,67 +106,88 @@ stanzaReminderOn = \undo \stanzaReminderOff
 
 % Nhạc
 nhacPhanMot = \relative c' {
-  \key c \major
+  \key f \major
   \time 2/4
-  \partial 4 \tuplet 3/2 { e8 e f } |
-  d4. c8 |
-  g'4 \tuplet 3/2 { f8 f g } |
-  e4 r8 e16 e |
-  a4. b16 a |
-  g8 c b c |
-  d2 ~ |
-  d4 \tuplet 3/2 { e8 e e } |
-  c4. d8 |
-  b4 \tuplet 3/2 { c8 c c } |
-  a4 r8 a16 c |
-  g4. g16 a |
-  f8 e d g |
-  c,2 ~ |
-  c4 \bar "||"
+  d8 (f) g g |
+  a4. g8 |
+  c a16 (g) d8 f |
+  g2 |
+  r8 g c d16 (c) |
+  a8. g16 a8 c |
+  d2 |
+  b!8. g16 b8 c |
+  c4. f,8 |
+  g a d, (f) |
+  g4. g16 g |
+  d'8 bf a8. g16 |
+  f8 e g bf |
+  d,2 \bar "||"
 }
 
-nhacPhanHai = \relative c'' {
-  \key c \major
+nhacPhanHai = \relative c' {
+  \key f \major
   \time 2/4
-  \partial 4
+  d8 (f)
   <<
     {
-      \tuplet 3/2 { g8 a g } |
-      g4. e8 |
-      a4 \tuplet 3/2 { g8 d' c } |
-      c2 ~ |
-      c4 \bar "|."
+      g g |
+      a4. a8 |
+      bf e, g e
     }
     {
-      \tuplet 3/2 { e,8 f e } |
-      e4. c8 |
-      f4 \tuplet 3/2 { e8 f f } |
-      e2 ~ |
-      e4
+      e8 e |
+      f4. f8 |
+      d d cs cs
     }
   >>
+  d2 \bar "|."
 }
 
 nhacPhanBa = \relative c'' {
-  \key c \major
+  \key f \major
   \time 2/4
-  \partial 4
   <<
     {
-      \tuplet 3/2 { g8 a g } |
-      e4. c8 |
-      a'4 \tuplet 3/2 { g8 d' c } |
-      c2 ~ |
-      c4 \bar "|."
+      a8 (bf) g g |
+      a8. g16 f8 a |
+      e4
     }
     {
-      \tuplet 3/2 { e,8 f e } |
-      c4. c8 |
-      f4 \tuplet 3/2 { e8 f f } |
-      a2 ~ |
-      a4
+      f8 (g) e e |
+      f8. e16 d8 d |
+      cs4
     }
   >>
+  <<
+    {
+      \voiceOne
+       e8 f16 (e)
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      cs8 cs
+    }
+  >>
+  \oneVoice
+  d2 \bar "|."
+}
+
+nhacPhanBon = \relative c'' {
+  \key f \major
+  \time 2/4
+  <<
+    {
+      a8 a g f |
+      bf4. e,8 |
+      f e g (a)
+    }
+    {
+      f8 f e ef |
+      d4. c8 |
+      d c bf (a)
+    }
+  >>
+  d2 \bar "|."
 }
 
 % Lời
@@ -174,54 +195,51 @@ loiPhanMot = \lyricmode {
   <<
     {
       \set stanza = "1."
-      Xin thương xót con, lạy Chúa, xin thương xót con,
-      Này hồn con vẫn luôn tìm nương ẩn nơi Chúa,
-      Dưới bóng cánh Ngài con hằng nương thân đêm ngày
-      cho tới khi qua hết bao tai nạn hãi hùng.
+      Chỉ trong Thiên Chúa, tôi mới yên hàn nghỉ ngơi,
+      Vì ơn cứu độ bởi Ngài mà tới.
+      Duy Ngài là núi đá, là ơn cứu độ tôi,
+      là thành lũy chở che, tôi chẳng còn nao núng gì.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "2."
       \override Lyrics.LyricText.font-shape = #'italic
-      Con xin Chúa thương rộng ban trăm muôn phúc lộc,
-      Từ trời xanh ước mong bàn tay Ngài giải thoát.
-      Quất ngã hết bọn quân thù bao vây con này.
-      Xin Chúa ban bao mến thương với lòng tín thành.
+      Chỉ trong Thiên Cháu, tôi mới yên hàn nghỉ ngơi.
+      Điều tôi ước mong bởi Ngài mà tới.
+      Duy Ngài là núi đá, là ơn cứu độ tôi,
+      là thành lũy chở che, tôi chẳng còn nao núng gì.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "3."
-      Oai phong Chúa thương biểu dương trên muôn cõi trời,
-      Nguyện Ngài mau chiếu soi hiển vinh đầy mặt đất.
-      Chúa vẫn tính thành trổi vượt trên mây muôn ngàn,
-      Luôn mến thương cao lút cả cung trời chín tầng.
+      Ẩn thân nơi Chúa như núi vững vàng chở che,
+      được ơn cứu độ và được vinh sngs.
+      Tin cậy avof Chúa mãi,
+      nào dân nước của ta,
+      và cùng đến thổ lộ tâm tình ở nhan thánh Ngài.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "4."
       \override Lyrics.LyricText.font-shape = #'italic
-      Con luôn vững tâm, lạy Chúa, con luôn vững tâm,
-      Và này con tấu cung đàn xin được ca xướng.
-      Thức giấc hỡi hồn, chỗi dậy cung tơ cung cầm,
-      tôi sẽ lay cho ánh ban mai cùng chỗi dậy.
-    }
-    \new Lyrics {
-	    \set associatedVoice = "beSop"
-	    \set stanza = "5."
-      Nơi muôn quốc gia, lạy Chúa, con xin cảm tạ,
-      Từ ngàn dân, tấu cung đàn dâng lời hoan chúc.
-      Chúa vẫn tín thành trổi vượt trên mây muôn ngàn,
-      Luôn mến thương cao lút cả cung trời chín tầng.
+      Này dân ta hỡi, mau vững tin và cậy trông,
+      cậy tin suốt đời ở một Thiên Chúa.
+      Mau thổ lộ với Chúa mọi tâm ý của ta,
+      Vì thực chốn để ta nương ẩn là nơi Chúa Trời.
     }
   >>
 }
 
 loiPhanHai = \lyricmode {
-  Xin xót thương con, lạy Chúa, nguyện xót thương con.
+  Chỉ trong Thiên Chúa, tôi mới nghỉ ngơi yên hàn.
 }
 
 loiPhanBa = \lyricmode {
-  Con tán dương Ngài, lạy Chúa, ở giữa muôn dân.
+  Chính nơi Thiên Chúa, tôi được cứu độ và vinh dự.
+}
+
+loiPhanBon = \lyricmode {
+  Chúa sẽ theo tội phúc mà thưởng phạt mỗi người.
 }
 
 
@@ -253,8 +271,9 @@ loiPhanBa = \lyricmode {
     }
     \column {
       \left-align {
-        \line { \small "-t5 c /2TN: câu 1, 2, 3, 4 + Đ.1" }
-        \line { \small "-t7 c /24TN: câu 3, 4 + Đ.2" }
+        \line { \small "-Cn A /8TN: câu 1, 2, 3 + Đ.1" }
+        \line { \small "-t2 l /23TN: câu 2, 4 + Đ.2" }
+        \line { \small "-t4 l /28TN: câu 1, 2, 4 + Đ.3" }
       }
     }
   %}
@@ -309,6 +328,27 @@ loiPhanBa = \lyricmode {
           \nhacPhanBa
         }
       \new Lyrics \lyricsto beSop \loiPhanBa
+    >>
+  >>
+  \layout {
+    indent = 10
+    \override Lyrics.LyricSpace.minimum-distance = #0.45
+    \override Score.BarNumber.break-visibility = ##(#f #f #f)
+    \override Score.SpacingSpanner.uniform-stretching = ##t
+    ragged-last = ##f
+  }
+}
+
+\score {
+  <<
+    \new Staff \with {
+      \remove "Time_signature_engraver"
+      instrumentName = \markup { \bold "Đ.3" }} <<
+        \clef treble
+        \new Voice = beSop {
+          \nhacPhanBon
+        }
+      \new Lyrics \lyricsto beSop \loiPhanBon
     >>
   >>
   \layout {
