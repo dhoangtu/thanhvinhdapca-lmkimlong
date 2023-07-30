@@ -1,3 +1,10 @@
+kích thước bìa trước + gáy + sau
+  a4: 210 x 297 mm
+  gáy: 25 mm
+  =rộng: 210x2 + 25 = 420 + 25 = 445 mm
+  =cao: 297mm
+
+===
 Hướng dẫn sử dụng Lilypond
 
 Lilypond là phần mềm soạn nhạc, tương tự như những phần mềm soạn nhạc khác như Encore, Sibelius, ...
