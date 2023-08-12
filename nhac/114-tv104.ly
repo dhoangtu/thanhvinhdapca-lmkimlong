@@ -131,7 +131,9 @@ nhacPhanMot = \relative c' {
   f f g a |
   bf4 bf8 d |
   c4. g8 |
-  g c a g |
+  g c
+  \once \phrasingSlurDashed
+  a \(g\) |
   f4 \bar "||"
 }
 
