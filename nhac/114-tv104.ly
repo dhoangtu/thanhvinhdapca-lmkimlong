@@ -105,113 +105,155 @@ stanzaReminderOn = \undo \stanzaReminderOff
 % kết thúc mã nguồn
 
 % Nhạc
-nhacPhanMot = \relative c'' {
+nhacPhanMot = \relative c' {
   \key f \major
   \time 2/4
-  \partial 4 \tuplet 3/2 { a8 g
-    <<
-        {
-          \voiceOne
-          a
-        }
-        \new Voice = "splitpart" {
-          \voiceTwo
-          \once \override NoteColumn.force-hshift = #1
-          \parenthesize
-          g
-        }
-    >>
-  } |
-  \oneVoice
-  a8. a16 \tuplet 3/2 { d,8 f g } |
-  a4. f16
+  f8 (g) d c |
+  a'8. f16 bf8 bf |
+  g2 |
+  g8 a f g |
+  d8. c16 f8 g |
+  a4 bf8 bf |
+  g4.
   <<
     {
       \voiceOne
-      g
+      g8
     }
     \new Voice = "splitpart" {
       \voiceTwo
       \once \override NoteColumn.force-hshift = #1
       \parenthesize
-      f
+      f8
     }
-  >> |
+  >>
   \oneVoice
-  g4 \tuplet 3/2 { a8 g f } |
-  e4 \tuplet 3/2 { a8 g a } |
-  a8. a16 \tuplet 3/2 { d,8 f g } |
-  a4. e16 e |
-  g4 \tuplet 3/2 { a8 f e } |
-  d4 r8 \bar "||"
+  f f g a |
+  bf4 bf8 d |
+  c4. g8 |
+  g c a g |
+  f4 \bar "||"
 }
 
 nhacPhanHai = \relative c' {
   \key f \major
   \time 2/4
-  \partial 8 d16 a' |
-  a8. bf16 \tuplet 3/2 { g8 a c } |
-  d2 ~ |
-  d4 \bar "|."
+  \partial 4 f8 (d) |
+  c4
+  <<
+    {
+      a'8 a |
+      a4. a8 |
+      bf8 g c e, |
+      f2
+    }
+    {
+      f8 f |
+      f4. f8 |
+      g e d c |
+      a2
+    }
+  >>
+  \bar "|."
 }
 
-nhacPhanBa = \relative c'' {
+nhacPhanBa = \relative c' {
   \key f \major
   \time 2/4
-  \partial 8 d16 g, |
-  bf4 \tuplet 3/2 { e,8 g e } |
-  d2 ~ |
-  d4 \bar "|."
+  \partial 4 f8 (d) |
+  c8.
+  <<
+    {
+      a'16 g8 f |
+      bf4 c8 e, |
+      f2 ~ |
+      f4 r
+    }
+    {
+      f16 e8 ef |
+      d4 c8 c |
+      a2 ~ |
+      a4 r
+    }
+  >>
+  \bar "|."
 }
 
-nhacPhanBon = \relative c'' {
+nhacPhanBon = \relative c' {
   \key f \major
   \time 2/4
-  \partial 8 d16 g, |
-  bf4 \tuplet 3/2 { e,8 g g } |
-  a4. f16 f |
-  f8. e16 \tuplet 3/2 { a8 c, c } |
-  d4 \bar "|."
+  \partial 4 f8 (g) |
+  d4. c8 |
+  <<
+    {
+      a'4. bf8 |
+      g4 c
+    }
+    {
+      f,4. d8 |
+      e4 e
+    }
+  >>
+  f2 \bar "|."
 }
 
-nhacPhanNam = \relative c'' {
+nhacPhanNam = \relative c' {
   \key f \major
   \time 2/4
-  \partial 8 a16 f |
-  bf4 \tuplet 3/2 { g8 g a } |
-  a4 \tuplet 3/2 { f8 g f } |
-  e4 \tuplet 3/2 { a8 c, e } |
-  d4 \bar "|."
+  \partial 4 f8 (g) |
+  d4. c8 |
+  <<
+    {
+      a'4. bf8 |
+      bf g c4
+    }
+    {
+      f,4. g8 |
+      g f e4
+    }
+  >>
+  f2 \bar "|."
 }
 
-nhacPhanSau = \relative c'' {
+nhacPhanSau = \relative c' {
   \key f \major
   \time 2/4
-  \partial 8 a16 a |
-  d,4. f16 (g) |
-  a8. a16 \tuplet 3/2 { g8 a c } |
-  d2 ~ |
-  d4 \bar "|."
+  \partial 4 f8 (g) |
+  d4. c8 |
+  <<
+    {
+      a'4. bf8 |
+      g bf c c
+    }
+    {
+      f,4. g8 |
+      f e e e
+    }
+  >>
+  f2 \bar "|."
 }
 
-nhacPhanBay = \relative c'' {
+nhacPhanBay = \relative c' {
   \key f \major
   \time 2/4
-  \partial 8 a16 a |
-  a8. d,16 \tuplet 3/2 { d8 f g } |
-  a4. a16 f |
-  e4 \tuplet 3/2 { g8 c, e } |
-  d4 \bar "|."
-}
-
-nhacPhanTam = \relative c'' {
-  \key f \major
-  \time 2/4
-  \partial 8 a16 a |
-  a8. d,16 \tuplet 3/2 { f8 e g } |
-  a4 \tuplet 3/2 { g8 f a } |
-  g4 \tuplet 3/2 { a8 e f } |
-  d4 \bar "|."
+  \partial 4 f8 (d) |
+  c4.
+  <<
+    {
+      a'8 |
+      bf g c e, |
+      f2 ~ |
+      f4 r
+    }
+    {
+      f8 |
+      d d c c |
+      a2 ~ |
+      a4 r
+    }
+  >>
+  \bar "|."
+  
 }
 
 % Lời
@@ -222,7 +264,7 @@ loiPhanMot = \lyricmode {
       Hãy cảm tạ Chúa, cầu khấn Thánh Danh.
       Loan báo kỳ công Ngài giữa muôn dân nước.
       Hát xướng lên theo nhịp đàn ngợi khen Chúa,
-      và gẫm suy sự việc Chúa đã làm.
+      và gẫm suy sự việc Chúa đã _ làm.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
@@ -231,7 +273,7 @@ loiPhanMot = \lyricmode {
       Hãy tự hào mãi vì có Thánh Danh.
       Ai những tìm kiếm Ngài hãy may vui sướng.
       Kiếm Chúa luôn, trông nhờ quyền uy tay Chúa
-      và chẳng ngưng tìm diện kiến nhan Ngài.
+      và chẳng ngưng tìm diện kiến nhan _ Ngài.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
@@ -239,7 +281,7 @@ loiPhanMot = \lyricmode {
       Hãy cảm tạ Chúa, cầu khấn Thánh Danh.
       Loan báo kỳ công Ngài giữa muôn dân nước.
       Nhắc nhớ luôn muôn vàn kỳ công tay Chúa,
-      mọi dấu thiêng, mọi điều Chúa ban truyền.
+      mọi dấu thiêng, mọi điều Chúa ban _ truyền.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
@@ -248,7 +290,7 @@ loiPhanMot = \lyricmode {
       Hát lên mừng Chúa, đàn hãy tấu vang,
       suy gẫm mọi công trình Ngài đã tạo tác.
       Hãy nhớ luôn \markup { \italic "tự" } hào vì uy danh Chúa,
-      hãy sướng vui, lòng kẻ kiếm trông Ngài.
+      hãy sướng vui, lòng kẻ kiếm trông _ Ngài.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
@@ -256,83 +298,110 @@ loiPhanMot = \lyricmode {
       Những ai cậy Chúa và dũng sức Ngài,
       luôn nhớ đừng khi ngừng tìm tôn nhan Chúa.
       Nhắc nhớ luôn muôn vàn kỳ công tay Chúa,
-      mọi dấu thiêng, mọi điều Chúa ban truyền.
+      mọi dấu thiêng, mọi điều Chúa ban _ truyền.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "6."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Hỡi nô bộc Chúa, dòng dõi Ap -- raham,
+      con cháu Ngài tuyển chọn thuộc nhà Gia -- cop.
+      Đức Chúa ta muôn đời Ngài là Thiên Chúa,
+      Ngài quyết chi, địa cầu phải tuân _ hành.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "7."
-      
+      Những điều thề hứa Ngài vẫn nhớ luôn,
+      Gia ước Ngài đã lập ngàn đời kiên vững.
+      Chính Chúa thương đoan thề cùng I -- sa -- ác,
+      Hiệp ước xưa Ngài lập với A -- a -- ron.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "8."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Chúa cho nạn đói tràn tới khắp nơi,
+      đây đó cạn lương thực để nuôi dân chúng.
+      Chúa đã thương sai một người ra đi trước,
+      là Giu -- se kẻ bị bán như tôi đòi.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "9."
-      
+      Đã bị xiềng xích nặng trĩu ở chân,
+      nhưng chúng còn tra cùm vào cổ ông nữa.
+      Mãi tới khi linh nghiệm lời ông tiên đoán,
+      Lời Chúa nay là bằng chứng ông vô tội.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "10."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Chính vị hoàng đế, thủ lãnh các dân
+      cho tháo cởi gông cùm và tha ông gấp,
+      Cất nhắc lên trong triều làm quan tể tướng,
+      quản lý luôn sản nghiệp của cung _ đình.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "11."
-      
+      Khiến dân Ngài dũng mạnh thắng đối phương,
+      Dân số họ mỗi ngày một tăng thêm mãi,
+      Khiến đối phương thay lòng và đâm ghen ghét,
+      bàn tính nhau làm hại chống dân _ Ngài.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "12."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Phái nô bộc Chúa là chính Mô -- sê,
+      sai kẻ Ngài tuyển chọn là A -- a -- ron,
+      Đến báo tin báo điềm là của Thiên Chúa,
+      cùng dấu thiêng trừng phạt khắp Ai _ Cập.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "13."
-      
+      Trưởng nam toàn xứ bị giết khắp nơi.
+      Đây những gì tinh nhuệ của cả dân nước.
+      Chúa khiến dân đem vàng bạc ra đi gấp,
+      từng ấy chi, chẳng hề có ai xiêu lạc.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "14."
       \override Lyrics.LyricText.font-shape = #'italic
-      
+      Bời vì Ngài nhớ lời Thánh ước xưa,
+      cho Ap -- ra -- ham là bầy tôi của Chúa.
+      Chúa dẫn đưa dân Ngài chọn ra đi đó.
+      họ sướng vui rộn ràng tiếng reo _ hò.
     }
   >>
 }
 
 loiPhanHai = \lyricmode {
-  
+  Muôn đời Chúa vẫn nhớ Giao ước Ngài đã lập ra.
 }
 
 loiPhanBa = \lyricmode {
-  
+  Tâm hồn những ai tìm Chúa hãy mừng vui.
 }
 
 loiPhanBon = \lyricmode {
-  
+  Hãy luôn tìm kiếm thánh nhan Chúa Trời.
 }
 
 loiPhanNam = \lyricmode {
-  
+  Những ai tìm Chúa hãy phấn khởi nức lòng.
 }
 
 loiPhanSau = \lyricmode {
-  
+  Hãy luôn tưởng nhớ những kỳ công Chúa đã làm.
 }
 
 loiPhanBay = \lyricmode {
-  
+  Địa cầu chan chứa phúc lộc của Ngài.
 }
 
 % Dàn trang
@@ -350,6 +419,7 @@ loiPhanBay = \lyricmode {
 			       (/ 20 20)))
   print-page-number = ##f
   ragged-bottom = ##t
+  page-count = 3
 }
 
 \markup {
