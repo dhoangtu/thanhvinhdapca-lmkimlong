@@ -108,7 +108,32 @@ stanzaReminderOn = \undo \stanzaReminderOff
 nhacPhanMot = \relative c'' {
   \key f \major
   \time 2/4
-  \partial 8
+  \partial 8 a16 a |
+  g4. g8 |
+  d d16 g f8 e |
+  a4 r8 g16 g |
+  c8 f, g f |
+  e4 r8 e |
+  d4. d16 d |
+  d8 d4 f16 (g) |
+  a4. a,16
+  <<
+    {
+      \voiceOne
+      e'
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      \stemUp
+      \once \override NoteColumn.force-hshift = #2
+      \tweak font-size #-2
+      \parenthesize
+      a,
+    }
+  >>
+  \oneVoice \stemNeutral
+  e'8 e a c, |
+  d4 r \bar "||"
 }
 
 nhacPhanHai = \relative c'' {
@@ -216,7 +241,7 @@ loiPhanMot = \lyricmode {
       Chúa đỡ nâng dân nghèo vượt qua cảnh cùng khốn,
       và dòng giống họ tăng như cừu.
       Trông vậy là người lành thực vui sướng.
-      BỌn gian đâu dám hở môi.
+      Bọn gian đâu dám hở môi.
     }
   >>
 }
