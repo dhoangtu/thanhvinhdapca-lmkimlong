@@ -105,14 +105,17 @@ stanzaReminderOn = \undo \stanzaReminderOff
 % kết thúc mã nguồn
 
 % Nhạc
-nhacPhanMot = \relative c'' {
-  \key g \major
+nhacPhanMot = \relative c' {
+  \key c \major
   \time 2/4
-  \partial 8 b8 |
+  \partial 4. e8 e f |
+  d4 e8 c |
+  g'2 ~ |
+  g8 c b
   <<
     {
       \voiceOne
-      a4.
+      \once \stemDown d
     }
     \new Voice = "splitpart" {
       \voiceTwo
@@ -123,18 +126,17 @@ nhacPhanMot = \relative c'' {
     }
   >>
   \oneVoice
-  g16 c |
-  c8. c16 \tuplet 3/2 { a8 d fs, } |
-  g4 \tuplet 3/2 { b8 c b } |
-  a8. g16 g8 e |
-  e4 \tuplet 3/2 { e8 fs e } |
-  d4. d16 e |
-  b8 d \tuplet 3/2 { fs8 a g } |
-  g4 r8 \bar "||"
+  c8. g16 c8 e, |
+  d2 ~ |
+  d4 d8 d |
+  a'8 c a16 (g) f8 |
+  g4 d8 f |
+  g8. g16 e8 d |
+  c4 r8 \bar "||"
 }
 
 nhacPhanHai = \relative c'' {
-  \key g \major
+  \key c \major
   \time 2/4
   \partial 8 g |
   e4 \tuplet 3/2 { e8 d d } |
@@ -154,7 +156,7 @@ nhacPhanHai = \relative c'' {
 }
 
 nhacPhanBa = \relative c'' {
-  \key g \major
+  \key c \major
   \time 2/4
   \partial 8 g8 |
   e e4 d16 d |
@@ -187,7 +189,7 @@ nhacPhanBa = \relative c'' {
 }
 
 nhacPhanBon = \relative c'' {
-  \key g \major
+  \key c \major
   \time 2/4
   \partial 8 g8 |
   e e4 d16 d |
