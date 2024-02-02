@@ -138,87 +138,103 @@ nhacPhanMot = \relative c' {
 nhacPhanHai = \relative c'' {
   \key c \major
   \time 2/4
-  \partial 8 g |
-  e4 \tuplet 3/2 { e8 d d } |
+  \partial 8
   <<
     {
-      b'4. a16 d |
-      fs,8 g a g |
-      g4 r8
+      g8 |
+      e4 a8 a |
+      a4. f8 |
+      g d
     }
     {
-      g4. fs16 e |
-      d8 e c c |
-      b4 r8
+      e8 |
+      c4 f8 f |
+      f4. d8 |
+      c c
     }
   >>
+  <<
+    {
+      \voiceOne
+      f8 (e16 d)
+    }
+    \new Voice = "splitpart" {
+      \voiceTwo
+      b4
+    }
+  >>
+  \oneVoice
+  c2 ~ |
+  c8
   \bar "|."
 }
 
 nhacPhanBa = \relative c'' {
   \key c \major
   \time 2/4
-  \partial 8 g8 |
-  e e4 d16 d |
+  \partial 8
   <<
     {
-      b'4. a16 b |
-      e,8 g a a |
-      a4. d8 |
-      d b
+      g8 |
+      e4 f8 g |
+      d4. d8 |
+      d d
     }
     {
-      g4. d16 d |
-      c8 e c cs |
-      d4. fs8 |
-      g g
+      e8 |
+      c4 d8 c |
+      b4. b8 |
+      b b
     }
   >>
   <<
     {
       \voiceOne
-      a8 (b16 a)
+      f'8 (e16 d)
     }
     \new Voice = "splitpart" {
       \voiceTwo
-      fs4
+      b4
     }
   >>
   \oneVoice
-  g4 r8 \bar "|."
+  c2 ~ |
+  c8
+  \bar "|."
 }
 
-nhacPhanBon = \relative c'' {
+nhacPhanBon = \relative c' {
   \key c \major
   \time 2/4
-  \partial 8 g8 |
-  e e4 d16 d |
+  \partial 8 c8 |
   <<
     {
-      b'4. a16 b |
-      e,8 g a a |
-      a4. d8 |
-      d b
+      g'4. g8 |
+      e f g d |
+      d4. d8 |
+      f f
     }
     {
-      g4. d16 d |
-      c8 e c cs |
-      d4. fs8 |
-      g g
+      b,4. b8 |
+      c d c c |
+      b4. b8 |
+      a a
     }
   >>
   <<
     {
       \voiceOne
-      a8 (b16 a)
+      d8 e16 (d)
     }
     \new Voice = "splitpart" {
       \voiceTwo
-      fs4
+      b8 b
     }
   >>
   \oneVoice
-  g4 r8 \bar "|."
+  c2 ~ |
+  c8
+  \bar "|."
 }
 
 % Lời
@@ -379,7 +395,7 @@ loiPhanBon = \lyricmode {
   >>
   \layout {
     indent = 10
-    \override Lyrics.LyricSpace.minimum-distance = #0.6
+    \override Lyrics.LyricSpace.minimum-distance = #2
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
     \override LyricHyphen.minimum-distance = #2.0
@@ -401,7 +417,7 @@ loiPhanBon = \lyricmode {
   >>
   \layout {
     indent = 10
-    \override Lyrics.LyricSpace.minimum-distance = #0.45
+    \override Lyrics.LyricSpace.minimum-distance = #2
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
     \override LyricHyphen.minimum-distance = #2.0
@@ -423,7 +439,7 @@ loiPhanBon = \lyricmode {
   >>
   \layout {
     indent = 10
-    \override Lyrics.LyricSpace.minimum-distance = #0.45
+    \override Lyrics.LyricSpace.minimum-distance = #2
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
     \override LyricHyphen.minimum-distance = #2.0
