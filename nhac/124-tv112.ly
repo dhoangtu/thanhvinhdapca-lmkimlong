@@ -105,131 +105,123 @@ stanzaReminderOn = \undo \stanzaReminderOff
 % kết thúc mã nguồn
 
 % Nhạc
-nhacPhanMot = \relative c'' {
-  \key bf \major
+nhacPhanMot = \relative c' {
+  \key d \major
   \time 2/4
-  \partial 8 g8 |
-  d8 d16 d bf'8 bf |
-  a2 ~ |
-  a8 f a g |
-  d4 r8 bf' |
-  bf bf16 bf a8 a |
-  d4 r8 d, |
-  d8.
-  <<
-    {
-      \voiceOne
-      d16
-    }
-    \new Voice = "splitpart" {
-      \voiceTwo
-      \once \override NoteColumn.force-hshift = #2.5
-      \tweak font-size #-2
-      \parenthesize
-      bf'16
-    }
-  >>
+  \partial 4 \tuplet 3/2 { d8 e fs } |
+  g8. g16 \tuplet 3/2 { fs8 e d } |
+  a'4 \tuplet 3/2 { d8 cs cs } |
+  d4. e16 d |
+  a2 |
+  g8. fs16
+  \tuplet 3/2 {
+    e8
+    <<
+      {
+        \voiceOne
+        a
+      }
+  
+      \new Voice = "splitpart" {
+        \voiceTwo
+        \once \override NoteColumn.force-hshift = #2
+        \tweak font-size #-2
+        \parenthesize
+        e
+      }
+    >>
+    b'
+  }
   \oneVoice
-  bf8 a |
-  a4 r8 g16 g |
-  g8 a16 (g) ef8 (d) |
-  a'8. bf16 bf (a) f8 |
-  g4 r8 \bar "||"
+  b4. g16 g |
+  a8. e16 \tuplet 3/2 { g8 fs e } |
+  d4 r8 \bar "||"
 }
 
-nhacPhanHai = \relative c' {
-  \key bf \major
+nhacPhanHai = \relative c'' {
+  \key d \major
   \time 2/4
   \partial 8
-  d8
   <<
     {
-      bf'4 a8 (g) |
-      a4. a8 |
-      f d
+      a16 a |
+      b8. a16 \tuplet 3/2 { e'8 e cs } |
+      d2 ~ |
+      d4 \bar "|."
     }
     {
-      g4 f8 (ef) |
-      d4. d8 |
-      d bf
+      fs,16 fs |
+      g8. fs16 \tuplet 3/2 { g8 g a } |
+      fs2 ~ |
+      fs4
     }
   >>
-  <<
-    {
-      \voiceOne
-      a'8 _(bf)
-    }
-
-    \new Voice = "splitpart" {
-      \voiceTwo
-      c,4
-    }
-  >>
-  \oneVoice
-  <g' bf,>4 r8 \bar "|."
 }
 
 nhacPhanBa = \relative c'' {
-  \key bf \major
+  \key d \major
   \time 2/4
   \partial 8
-  g8 |
-  d d16 d bf'8 bf |
-  <a fs>4 r8 g
   <<
     {
-      d'4. c16 bf |
-      a8 a c bf
+      a8 |
+      g8. fs16 a8 b |
+      b4. g16 g |
+      a8. a16 \tuplet 3/2 { fs'8 e e } |
+      d4 \bar "|."
     }
     {
-      bf4. a16 g |
-      fs8 fs fs fs
+      fs,8 |
+      e8. d16 fs8 g |
+      g4. e16 e |
+      fs8. fs16 \tuplet 3/2 { a8 g g } |
+      fs4
     }
   >>
-  g2 ~ |
-  g4 r8 \bar "|."
 }
 
 nhacPhanBon = \relative c'' {
-  \key bf \major
+  \key d \major
   \time 2/4
   \partial 8
-  g8 |
-  d d16 d bf'8 bf |
-  <a fs>4 r8 g
   <<
     {
-      d'4. c16 bf |
-      a8 a c bf
+      d8 |
+      a8. fs16 g8 a |
+      b4. a16 e' |
+      e4 \tuplet 3/2 { d8 cs e } |
+      d4 \bar "|."
     }
     {
-      bf4. a16 g |
-      fs8 fs fs fs
+      fs,8 |
+      fs8. d16 e8 fs |
+      g4. fs16 g |
+      a4 \tuplet 3/2 { b8 a g } |
+      fs4
     }
   >>
-  g2 ~ |
-  g4 r8 \bar "|."
 }
 
 nhacPhanNam = \relative c'' {
-  \key bf \major
+  \key d \major
   \time 2/4
   \partial 8
-  g8 |
-  d d16 d bf'8 bf |
-  <a fs>4 r8 g
   <<
     {
-      d'4. c16 bf |
-      a8 a c bf
+      d8 |
+      fs, fs fs (a) |
+      b4. cs8 |
+      a4 \tuplet 3/2 { a8 e' d } |
+      d4 \bar "|."
     }
     {
-      bf4. a16 g |
-      fs8 fs fs fs
+      fs,8 |
+      d8 d d (fs) |
+      g4. e8 |
+      fs4 \tuplet 3/2 { fs8 g g } |
+      fs4
     }
   >>
-  g2 ~ |
-  g4 r8 \bar "|."
 }
 
 % Lời
@@ -301,7 +293,7 @@ loiPhanBon = \lyricmode {
 }
 
 loiPhanNam = \lyricmode {
-  Chúa đặt ngồi chung với hàng quyền quý vinh sang.
+  Chúa đặt người ngồi chung với hàng quyền quý vinh sang.
 }
 
 % Dàn trang
